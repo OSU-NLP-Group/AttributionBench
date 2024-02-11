@@ -7,31 +7,31 @@
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
   <meta name="description"
-    content="The first open-source generalist model and dataset for tables.">
-  <meta property="og:title" content="TableLlama" />
+    content="A systematic benchmark for attribution evaluation.">
+  <meta property="og:title" content="AttributionBench" />
   <meta property="og:description"
-    content="The first open-source generalist model and dataset for tables." />
-  <meta property="og:url" content="https://osu-nlp-group.github.io/TableLlama/" />
+    content="A systematic benchmark for attribution evaluation." />
+  <meta property="og:url" content="https://osu-nlp-group.github.io/AttributionBench/" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/images/tablellama_icon.png" />
+  <meta property="og:image" content="g" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
 
-  <meta name="twitter:title" content="TableLlama: Towards Open Large Generalist Models for Tables">
+  <meta name="twitter:title" content="AttributionBench: How Hard is Automatic Attribution Evaluation?">
   <meta name="twitter:description"
-    content="Semi-structured tables are ubiquitous. There has been a variety of tasks that aim to automatically interpret, augment, and query tables. Current methods often require pretraining on tables or special model architecture design, are restricted to specific table types, or have simplifying assumptions about tables and tasks. This paper makes the first step towards developing open-source large language models (LLMs) as generalists for a diversity of table-based tasks. Towards that end, we construct TableInstruct, a new dataset with a variety of realistic tables and tasks, for instruction tuning and evaluating LLMs. We further develop the first open-source generalist model for tables, TableLlama, by fine-tuning Llama 2 (7B) with LongLoRA to address the long context challenge. We experiment under both in-domain setting and out-of-domain setting. On 7 out of 8 in-domain tasks, TableLlama achieves com- parable or better performance than the SOTA for each task, despite the latter often has task-specific design. On 6 out-of-domain datasets, it achieves 6-48 absolute point gains compared with the base model, showing that training on TableInstruct enhances the model’s generalizability. We will open-source our dataset and trained model to boost future work on developing open generalist models for tables.">
+    content="Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer's attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present <b>AttributionBench</b>, a comprehensive benchmark compiled from various existing attribution datasets. Our extensive experiments on <b>AttributionBench</b> reveal the challenges of automatic attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that even a fine-tuned GPT-3.5 does not surpass a 78% macro-F1 score on a basic binary classification task. A detailed analysis of more than 300 error cases indicates that a majority of failures stem from the model's inability to process nuanced information, and discrepancies between the data models have access to and that human annotators do.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/tablellama_figure1.png">
-  <meta name="twitter:card" content="static/images/tablellama_figure1.png">
+  <!-- <meta name="twitter:image" content="static/images/tablellama_figure1.png"> -->
+  <!-- <meta name="twitter:card" content="static/images/tablellama_figure1.png"> -->
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords"
-    content="Large Language Models, Instruction Tuning, Table Understanding, Natural Language Processing, Llama">
+    content="Large Language Models, Attribution Evaluation, Natural Language Processing, GPT-3.5, GPT-4">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>TableLlama: Towards Open Large Generalist Models for Tables</title>
-  <link rel="icon" type="image/x-icon" href="static/images/tablellama_icon.png">
+  <title>AttributionBench: How Hard is Automatic Attribution Evaluation?</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/tablellama_icon.png"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -101,20 +101,20 @@
           <div class="column has-text-centered">
             <!-- Flex container for icon and title -->
             <div style="display: flex; align-items: center; justify-content: center;">
-              <img src="static/images/tablellama_icon.png" alt="Icon"
-                style="height: 7em; margin-right: -90px;">
-              <h1 class="title is-1 publication-title">TableLlama: Towards Open Large Generalist Models for Tables</h1>
+              <!-- <img src="static/images/tablellama_icon.png" alt="Icon"
+                style="height: 7em; margin-right: -90px;"> -->
+              <h1 class="title is-1 publication-title">AttributionBench: How Hard is Automatic Attribution Evaluation?</h1>
             </div>
             <!-- <h1 class="title is-1 publication-title">TableLlama: Towards Open Large Generalist Models for Tables</h1> -->
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <sup>1</sup><a href="https://zhangtianshu.github.io/" target="_blank">Tianshu
-                  Zhang</a>,</span>
+                <sup>1</sup><a href="https://flyhero99.github.io/" target="_blank">Yifei Li
+                  </a>,</span>
               <span class="author-block">
-                <sup>2</sup><a href="https://xiangyue9607.github.io/" target="_blank">Xiang Yue</a>,</span>
+                <sup>1</sup><a href="https://xiangyue9607.github.io/" target="_blank">Xiang Yue</a>,</span>
               <span class="author-block">
-                <sup>1</sup><a href="https://flyhero99.github.io" target="_blank">Yifei Li</a>,</span>
+                <sup>1</sup><a href="https://flyhero99.github.io" target="_blank">Zeyi Liao</a>,</span>
               <span class="author-block">
                 <sup>1</sup><a href="https://web.cse.ohio-state.edu/~sun.397/" target="_blank">Huan Sun</a>
               </span>
@@ -122,14 +122,13 @@
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <sup>1</sup>The Ohio State University,
-                <sup>2</sup>IN.AI Research
+                <sup>1</sup>The Ohio State University
                 <!-- <br>Conferance name and year</span> -->
                 <br>
                 <span class="author-block">
-                  <a href="mailto:zhang.11535@osu.edu">zhang.11535@osu.edu</a>,
-                  <a href="mailto:xiangyue@in.ai">xiangyue@in.ai</a>,
                   <a href="mailto:li.14042@osu.edu">li.14042@osu.edu</a>,
+                  <a href="mailto:yue.149@osu.edu">yue.149@osu.edu</a>,
+                  <a href="mailto:liao.629@osu.edu">liao.629@osu.edu</a>,
                   <a href="mailto:sun.397@osu.edu">sun.397@osu.edu</a>
                 </span>
                 <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
@@ -139,7 +138,7 @@
               <div class="publication-links">
                 <!-- Huggingface Dataset link -->
                 <span class="link-block">
-                  <a href="https://huggingface.co/datasets/osunlp/TableInstruct/" target="_blank"
+                  <a href="https://huggingface.co/datasets/osunlp/AttributionBench/" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">🤗</span>
                     <span>Dataset</span>
@@ -147,17 +146,17 @@
                 </span>
 
                 <!-- Huggingface Model link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://huggingface.co/osunlp/TableLlama/" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">🤗</span>
                     <span>Models</span>
                   </a>
-                </span>
+                </span> -->
 
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/OSU-NLP-Group/TableLlama" target="_blank"
+                  <a href="https://github.com/OSU-NLP-Group/AttributionBench" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fab fa-github"></i></span>
                     <span>Code</span>
@@ -189,9 +188,7 @@
             <!-- <h2 class="title is-3">Introduction</h2> -->
             <div class="content has-text-justified">
               <p>
-                In this work, we introduce <b>TableLlama</b> and <b>TableInstruct</b>, the first large
-                <b>open-source generalist model</b> and <b>instruction tuning dataset</b> for <b>tables</b>. Everything is
-                <b>open-source</b> right now!
+                Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer's attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present <b>AttributionBench</b>, a comprehensive benchmark compiled from various existing attribution datasets. Our extensive experiments on <b>AttributionBench</b> reveal the challenges of automatic attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that even a fine-tuned GPT-3.5 does not surpass a 78% macro-F1 score on a basic binary classification task. A detailed analysis of more than 300 error cases indicates that a majority of failures stem from the model's inability to process nuanced information, and discrepancies between the data models have access to and that human annotators do.
               </p>
               <p>
                 <b>TableInstruct</b> is a large-scale instruction tuning dataset with diverse, realistic tasks based on
