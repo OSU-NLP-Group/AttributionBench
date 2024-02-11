@@ -1,0 +1,51 @@
+{
+    "base_c_e": {
+        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n",
+        "llama2": "### Instruction:\nPlease solely verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "base_q_c_e": {
+        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The question is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the question. Options: 'attributable' or 'not attributable'.\n",
+        "llama2": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The question is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the question. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "base_c_e_r": {
+        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim. The claim may be part of a response, or it may be the same as the response. The response is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response. Options: 'attributable' or 'not attributable'.\n",
+        "llama2": "### Instruction:\nPlease solely verify whether the reference can support the claim. The claim may be part of a response, or it may be the same as the response. The response is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "base_q_c_e_r": {
+        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The claim may be part of a response, or it may be the same as the response. The question and the response are provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response or the question. Options: 'attributable' or 'not attributable'.\n",
+        "llama2": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The claim may be part of a response, or it may be the same as the response. The question and the response are provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response or the question. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "info_c_e": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "info_q_c_e": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "info_c_e_r": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "info_q_c_e_r": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "breakdown_c_e": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "breakdown_q_c_e": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "breakdown_c_e_r": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "breakdown_q_c_e_r": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "breakdown_strong_q_c_e": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "breakdown_weak_q_c_e": {
+        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
+    },
+    "base_c_e_w_exp": {
+        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim. You should first output the explanation, and then give your judgement. Finally, please format the judgement in this format: 'Answer: attributable' or 'Answer: not attributable'.\n"
+    }
+}
