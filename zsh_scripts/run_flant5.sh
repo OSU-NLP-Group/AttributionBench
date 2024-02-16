@@ -1,6 +1,6 @@
 #!/bin/bash
 
-models=("google/flan-ul2" "google/flan-t5-xxl" "google/flan-t5-large" "google/flan-t5-xl")
+models=("google/flan-ul2" "google/flan-t5-xxl" "google/flan-t5-large" "google/flan-t5-xl" "osunlp/attrscore-flan-t5-xl`")
 
 for model in "${models[@]}"; do
     # 32 1e-5

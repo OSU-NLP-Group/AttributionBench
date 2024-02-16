@@ -1,7 +1,7 @@
 #!/bin/bash
 
-dataset_versions=("debug")
-# dataset_versions=("v3.0" "v3.1" "v3.2" "v3.3")
+dataset_versions=("subset_balanced")
+# dataset_versions=("subset_balanced" "overall_balanced" "not_balanced" "full_data")
 
 for dataset_version in "${dataset_versions[@]}"; do
     for file in ../inference_results/${dataset_version}/*; do
