@@ -32,7 +32,7 @@ for model in "${models[@]}"; do
     # train
     torchrun --nproc_per_node ${nodes} --master-port ${master_port} ../src/train/flant5_train.py \
         --model_name_or_path $MODEL_DIR \
-        --data_path osunlp/AttributionBench \
+        --data_path AttributionBench \
         --template ${template} \
         --template_path ../src/prompts.json \
         --dataset_version ${dataset_version} \
@@ -58,7 +58,7 @@ for model in "${models[@]}"; do
     # inference
     python ../src/inference/run_inference.py \
         --method autoais \
-        --data_path osunlp/AttributionBench \
+        --data_path AttributionBench \
         --dataset_version ${dataset_version} \
         --template_path ../src/prompts.json \
         --model_name ${OUTPUT_DIR} \
@@ -72,7 +72,7 @@ for model in "${models[@]}"; do
     # zero-shot
     python ../src/inference/run_inference.py \
         --method autoais \
-        --data_path osunlp/AttributionBench \
+        --data_path AttributionBench \
         --dataset_version ${dataset_version} \
         --template_path ../src/prompts.json \
         --model_name $model \

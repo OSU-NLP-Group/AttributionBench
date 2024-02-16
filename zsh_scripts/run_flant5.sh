@@ -37,7 +37,7 @@ for model in "${models[@]}"; do
         --master_port $MLP_WORKER_0_PORT \
         --nnodes $MLP_WORKER_NUM ../src/train/flant5_train.py \
         --model_name_or_path $model \
-        --data_path osunlp/AttributionBench \
+        --data_path AttributionBench \
         --template ${template} \
         --template_path ../src/prompts.json \
         --dataset_version ${dataset_version} \
@@ -64,7 +64,7 @@ for model in "${models[@]}"; do
     export CUDA_VISIBLE_DEVICES="0"
     python ../src/inference/run_inference.py \
         --method attrbench \
-        --data_path osunlp/AttributionBench \
+        --data_path AttributionBench \
         --dataset_version ${dataset_version} \
         --template_path ../src/prompts.json \
         --model_name ${OUTPUT_DIR} \
@@ -79,7 +79,7 @@ for model in "${models[@]}"; do
     export CUDA_VISIBLE_DEVICES="0"
     python ../src/inference/run_inference.py \
         --method attrbench \
-        --data_path osunlp/AttributionBench \
+        --data_path AttributionBench \
         --dataset_version ${dataset_version} \
         --template_path ../src/prompts.json \
         --model_name $model \

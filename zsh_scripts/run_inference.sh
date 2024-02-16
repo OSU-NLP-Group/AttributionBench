@@ -8,7 +8,7 @@ export MODEL_DIR=osunlp/attrscore-alpaca-7b
 
 python ../src/inference/run_inference.py \
 --method attrscore \
---data_path osunlp/AttributionBench \
+--data_path AttributionBench \
 --dataset_version ${dataset_version} \
 --template_path ../src/prompts.json \
 --model_name ${MODEL_DIR} \

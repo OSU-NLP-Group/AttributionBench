@@ -629,7 +629,7 @@ if __name__ == "__main__":
         "--method", choices=["autoais", "attrscore", "attrbench", "gpt4"]
     )
     parser.add_argument("--model_name", default="", type=str)
-    parser.add_argument("--data_path", default="osunlp/AttributionBench")
+    parser.add_argument("--data_path", default="AttributionBench")
     parser.add_argument("--dataset_version", default="v2.1")
     parser.add_argument("--output_dir", default="./inference_results")
     parser.add_argument("--bs", default=2, type=int)

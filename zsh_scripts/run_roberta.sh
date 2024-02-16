@@ -39,7 +39,7 @@ torchrun --nproc_per_node ${nodes} --master-port ${master_port} ../src/train/rob
   --template ${template} \
   --template_path ../src/prompts.json \
   --dataset_version ${dataset_version} \
-  --data_path osunlp/AttributionBench \
+  --data_path AttributionBench \
   --num_train_samples -1 \
   --output_dir $OUTPUT_DIR \
   --model_max_length 512 \

@@ -31,7 +31,7 @@ for dataset_version in "${dataset_versions[@]}"; do
       --template ${template} \
       --template_path ../src/prompts.json \
       --dataset_version ${dataset_version} \
-      --data_path osunlp/AttributionBench \
+      --data_path AttributionBench \
       --num_train_samples -1 \
       --bf16 True \
       --output_dir $OUTPUT_DIR \
@@ -57,7 +57,7 @@ for dataset_version in "${dataset_versions[@]}"; do
     # generate inference results
     python ../src/inference/run_inference.py \
         --method attrbench \
-        --data_path osunlp/AttributionBench \
+        --data_path AttributionBench \
         --dataset_version ${dataset_version} \
         --template_path ../src/prompts.json \
         --model_name ${OUTPUT_DIR} \
@@ -77,7 +77,7 @@ done
 export CUDA_VISIBLE_DEVICES="0"
 python ../src/inference/run_inference.py \
     --method attrbench \
-    --data_path osunlp/AttributionBench \
+    --data_path AttributionBench \
     --dataset_version ${dataset_version} \
     --template_path ../src/prompts.json \
     --model_name osunlp/attrscore-alpaca-7b \
@@ -123,11 +123,11 @@ torchrun --nproc_per_node $MLP_WORKER_GPU \
     --master_port $MLP_WORKER_0_PORT \
     --nnodes $MLP_WORKER_NUM ../src/train/llama_train.py \
     --model_name_or_path $MODEL_DIR \
-    --data_path osunlp/AttributionBench \
+    --data_path AttributionBench \
     --template ${template} \
     --template_path ../src/prompts.json \
     --dataset_version ${dataset_version} \
-    --data_path osunlp/AttributionBench \
+    --data_path AttributionBench \
     --num_train_samples -1 \
     --bf16 True \
     --output_dir $OUTPUT_DIR \
@@ -154,7 +154,7 @@ torchrun --nproc_per_node $MLP_WORKER_GPU \
 export CUDA_VISIBLE_DEVICES="0"
 python ../src/inference/run_inference.py \
     --method attrbench \
-    --data_path osunlp/AttributionBench \
+    --data_path AttributionBench \
     --dataset_version ${dataset_version} \
     --template_path ../src/prompts.json \
     --model_name ${OUTPUT_DIR} \
