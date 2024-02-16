@@ -1,67 +1,3 @@
----
-configs:
-- config_name: subset_balanced
-  description: >-
-    The subset balanced version of the dataset. Each sub-dataset contains the
-    same number of attributable labels and not attributable labels.
-  data_files:
-  - split: train
-    path: train_all_subset_balanced.jsonl
-  - split: dev
-    path: dev_all_subset_balanced.jsonl
-  - split: test
-    path: test_all_subset_balanced.jsonl
-  - split: test_ood
-    path: test_ood_all_subset_balanced.jsonl
-- config_name: overall_balanced
-  description: >-
-    The overall balanced version of the dataset. The whole set contains the same
-    number of attributable labels and not attributable labels, but each
-    sub-dataset does not.
-  data_files:
-  - split: train
-    path: train_overall_balanced.jsonl
-  - split: dev
-    path: dev_all_subset_balanced.jsonl
-  - split: test
-    path: test_all_subset_balanced.jsonl
-  - split: test_ood
-    path: test_ood_all_subset_balanced.jsonl
-- config_name: not_balanced
-  description: >-
-    The not balanced version of the dataset. The label distribution is the same
-    as full data which is not balanced, but the data scale is sampled as
-    comparable with the two label balanced version.
-  data_files:
-  - split: train
-    path: merged_train_sampled.jsonl
-  - split: dev
-    path: dev_all_subset_balanced.jsonl
-  - split: test
-    path: test_all_subset_balanced.jsonl
-  - split: test_ood
-    path: test_ood_all_subset_balanced.jsonl
-- config_name: full_data
-  description: Full training data. The label distribution is not balanced.
-  data_files:
-  - split: train
-    path: merged_train.jsonl
-  - split: dev
-    path: dev_all_subset_balanced.jsonl
-  - split: test
-    path: test_all_subset_balanced.jsonl
-  - split: test_ood
-    path: test_ood_all_subset_balanced.jsonl
-license: apache-2.0
-task_categories:
-- text-classification
-language:
-- en
-pretty_name: AttributionBench
-size_categories:
-- 10K<n<100K
----
-
 # AttributionBench
 Code and datasets for the paper "AttributionBench: How Hard is Automatic Attribution Evaluation?".
 
@@ -85,16 +21,17 @@ features = datasets.Features({
   'id': datasets.Value('string'),
   })
 
-# in-domain train (subset-balanced)
-# possible values for 'name' field: ["subset_balanced", "overall_balanced", "not_balanced", "full_data"]
-dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced", split="train", features=features)
+# in-domain train (subset-balanced): 
+train_dataset = datasets.load_dataset("json", split='train', data_files="data/train_all_subset_balanced.jsonl", features=features)
 
-# in-domain eval/test (subset-balanced)
-# dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced", split="test", features=features)
-dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced", split="test", features=features)
+# in-domain dev (subset-balanced)
+dev_dataset = datasets.load_dataset("json", split='train', data_files="data/dev_all_subset_balanced.jsonl", features=features)
+
+# in-domain test (subset-balanced)
+test_dataset = datasets.load_dataset("json", split='train', data_files="data/test_all_subset_balanced.jsonl", features=features)
 
 # out-of-domain test (subset-balanced)
-dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced", split="test_ood", features=features)
+test_ood_dataset = datasets.load_dataset("json", split='train', data_files="data/test_ood_all_subset_balanced.jsonl", features=features)
 ```
 
 ## Dataset Structure
@@ -126,3 +63,11 @@ dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced
 - ```attribution_label```: ```str``` "attributable" or "not attributable".
 - ```src_dataset```: ```str``` The source dataset of the data item.
 - ```id```: ```str``` The unique id for the data item in AttributionBench.
+
+## Training
+For fine-tuning models on AttributionBench, please refer to the scripts under the ```scripts/``` directory. For example, if you want to fine-tune FLAN-T5, then simply do:
+```shell
+cd zsh_scripts
+sh run_flant5.sh
+```
+Please modify the hyperparameters and paths before you do so.
