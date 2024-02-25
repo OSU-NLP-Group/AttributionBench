@@ -2,7 +2,7 @@
 Code and datasets for the paper "AttributionBench: How Hard is Automatic Attribution Evaluation?".
 
 ## Dataset
-We constructed this dataset from multiple existing data sources in a unified format, in order to create a unified and diverse testbed for evaluating advanced attribution evaluation systems. The dataset contains both in-domain training set and id-domain and out-of-domain test set.
+We constructed this dataset from multiple existing data sources in a unified format, in order to create a unified and diverse testbed for evaluating advanced attribution evaluation systems. The dataset contains both in-distribution training set and id-distribution and out-of-distribution test set.
 
 ## Usage
 ```python
@@ -64,10 +64,14 @@ test_ood_dataset = datasets.load_dataset("json", split='train', data_files="data
 - ```src_dataset```: ```str``` The source dataset of the data item.
 - ```id```: ```str``` The unique id for the data item in AttributionBench.
 
-## Training
+## Prompting GPT-3.5 and GPT-4
+
+
+## Fine-tuning Open-Source Models
 For fine-tuning models on AttributionBench, please refer to the scripts under the ```scripts/``` directory. For example, if you want to fine-tune FLAN-T5, then simply do:
 ```shell
 cd zsh_scripts
 sh run_flant5.sh
 ```
 Please modify the hyperparameters and paths before you do so.
+
