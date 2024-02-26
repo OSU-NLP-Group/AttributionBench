@@ -6,11 +6,9 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description"
-    content="A systematic benchmark for attribution evaluation.">
+  <meta name="description" content="A systematic benchmark for attribution evaluation.">
   <meta property="og:title" content="AttributionBench" />
-  <meta property="og:description"
-    content="A systematic benchmark for attribution evaluation." />
+  <meta property="og:description" content="A systematic benchmark for attribution evaluation." />
   <meta property="og:url" content="https://osu-nlp-group.github.io/AttributionBench/" />
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="g" />
@@ -20,7 +18,8 @@
 
   <meta name="twitter:title" content="AttributionBench: How Hard is Automatic Attribution Evaluation?">
   <meta name="twitter:description"
-    content="Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer's attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present <b>AttributionBench</b>, a comprehensive benchmark compiled from various existing attribution datasets. Our extensive experiments on <b>AttributionBench</b> reveal the challenges of automatic attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that even a fine-tuned GPT-3.5 does not surpass a 78% macro-F1 score on a basic binary classification task. A detailed analysis of more than 300 error cases indicates that a majority of failures stem from the model's inability to process nuanced information, and discrepancies between the data models have access to and that human annotators do.">
+    content="Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer's attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present AttributionBench, a comprehensive benchmark compiled from various existing attribution datasets. Our extensive experiments on AttributionBench reveal the challenges of automatic attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that even a fine-tuned GPT-3.5 only achieves around 80% macro-F1 under a binary classification formulation. A detailed analysis of more than 300 error cases indicates that a
+    majority of failures stem from the model's inability to process nuanced information, and the discrepancy between the information the model has access to and that human annotators do.">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <!-- <meta name="twitter:image" content="static/images/tablellama_figure1.png"> -->
   <!-- <meta name="twitter:card" content="static/images/tablellama_figure1.png"> -->
@@ -31,7 +30,6 @@
 
 
   <title>AttributionBench: How Hard is Automatic Attribution Evaluation?</title>
-  <!-- <link rel="icon" type="image/x-icon" href="static/images/tablellama_icon.png"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -78,6 +76,9 @@
             More Research
           </a>
           <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://osu-nlp-group.github.io/TravelPlanner/">
+              TravelPlanner
+            </a>
             <a class="navbar-item" href="https://tiger-ai-lab.github.io/MAmmoTH/">
               MAmmoTH
             </a>
@@ -103,18 +104,19 @@
             <div style="display: flex; align-items: center; justify-content: center;">
               <!-- <img src="static/images/tablellama_icon.png" alt="Icon"
                 style="height: 7em; margin-right: -90px;"> -->
-              <h1 class="title is-1 publication-title">AttributionBench: How Hard is Automatic Attribution Evaluation?</h1>
+              <h1 class="title is-1 publication-title">AttributionBench: How Hard is Automatic Attribution Evaluation?
+              </h1>
             </div>
             <!-- <h1 class="title is-1 publication-title">TableLlama: Towards Open Large Generalist Models for Tables</h1> -->
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <sup>1</sup><a href="https://flyhero99.github.io/" target="_blank">Yifei Li
-                  </a>,</span>
+                </a>,</span>
               <span class="author-block">
                 <sup>1</sup><a href="https://xiangyue9607.github.io/" target="_blank">Xiang Yue</a>,</span>
               <span class="author-block">
-                <sup>1</sup><a href="https://flyhero99.github.io" target="_blank">Zeyi Liao</a>,</span>
+                <sup>1</sup><a href="https://lzy37ld.github.io/" target="_blank">Zeyi Liao</a>,</span>
               <span class="author-block">
                 <sup>1</sup><a href="https://web.cse.ohio-state.edu/~sun.397/" target="_blank">Huan Sun</a>
               </span>
@@ -187,58 +189,17 @@
           <div class="column has-text-centered">
             <!-- <h2 class="title is-3">Introduction</h2> -->
             <div class="content has-text-justified">
-              <p>
+              <!-- <p>
                 Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer's attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present <b>AttributionBench</b>, a comprehensive benchmark compiled from various existing attribution datasets. Our extensive experiments on <b>AttributionBench</b> reveal the challenges of automatic attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that even a fine-tuned GPT-3.5 does not surpass a 78% macro-F1 score on a basic binary classification task. A detailed analysis of more than 300 error cases indicates that a majority of failures stem from the model's inability to process nuanced information, and discrepancies between the data models have access to and that human annotators do.
-              </p>
-              <p>
-                <b>TableInstruct</b> is a large-scale instruction tuning dataset with diverse, realistic tasks based on
-                real-world tables. <b>TableInstruct</b> boasts a collection of <b>14 datasets of 11 tasks</b> in total,
-                which is curated from <b>1.24M</b> tables containing <b>2.6M</b> instances:
-              <ul>
-                <li>All data items are <b>unified into an instruction tuning manner</b> for further LLM training;</li>
-                <li>All data items in <b>TableInstruct</b> are collected from real tables and real tasks;</li>
-                <!-- <li>Each task in <b>TableInstruct</b> is a realistic task that can be applied to real-world scenarios.</li> -->
-                <li><b>TableInstruct</b> provides both in-domain training tasks to empower the model with fundamental
-                  table understanding abilities, and in-domain & out-of-domain evaluation tasks to test the model’s
-                  generalization and high-level reasoning ability.</li>
-              </ul>
-              </p>
-              <p>
-                <b>TableLlama</b> is a large generalist model for tables based on Llama 2 (7B) and LongLoRA, which can:
-              <ul>
-                <li><b>Support long input context (up to <code>8k</code>);</b></li>
-                <li>Achieve <b>comparable or even better performance</b> than the SOTA on almost all of the in-domain
-                  tasks;</li>
-                <li>Achieve <b>6-48 absolute point gains</b> on 6 out-of-domain datasets compared with the base model, demonstrating
-                  that TableInstruct can substantially enhance model generalizability.</li>
-              </ul>
-              <!-- is adopted to address the long context challenge. <b>TableLlama</b> is trained on <b>TableInstruct</b> and achieves comparable or even better performance than the SOTA on almost all of the in-domain tasks. For out-of-domain tasks, compared with the base model, TableLlama can achieve 6-48 absolute point gains on 6 datasets, which demonstrates that TableInstruct can substantially enhance model generalizability. -->
+              </p> -->
 
-              <!-- Image carousel -->
-              <section class="hero">
-                <div class="hero-body">
-                  <div class="container is-max-desktop">
-                    <div class="columns is-centered">
-                      <div class="column is-four-fifths">
-                        <div class="item">
-                          <!-- Your image here -->
-                          <img src="static/images/overview1_yifei_1114-v13.png"
-                            alt="An overview of TableInstruct and TableLlama">
-                          <p>
-                            <b>Figure 1</b>: An overview of TableInstruct and TableLlama. TableInstruct includes a wide
-                            variety
-                            of
-                            realistic tables and tasks with instructions. We make the first step towards developing
-                            open-source
-                            generalist models for tables with TableInstruct and TableLlama.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- End image carousel -->
+              <p><i><b>Updates</b></i></p>
+              <ul>
+                <li>2024/2/25: We have released the <a
+                    href="https://huggingface.co/datasets/osunlp/AttributionBench/">dataset</a> and <a
+                    href="https://github.com/OSU-NLP-Group/AttributionBench/">codebase</a> for the paper. Check it out!
+                </li>
+              </ul>
 
               <!-- Paper abstract -->
               <section class="hero">
@@ -249,28 +210,19 @@
                         <h2 class="title is-3">Abstract</h2>
                         <div class="content has-text-justified">
                           <p>
-                            Semi-structured tables are ubiquitous. There has been a variety of tasks that aim to
-                            automatically interpret, augment, and query tables. Current methods often require
-                            pretraining on tables or special model architecture design, are restricted to specific table
-                            types, or have simplifying assumptions about tables and tasks. This paper makes the first
-                            step towards developing open-source large
-                            language models
-                            (LLMs) as generalists for a diversity of table-based tasks. Towards that end, we construct
-                            TableInstruct, a new dataset with a variety of realistic tables and tasks, for instruction
-                            tuning and
-                            evaluating LLMs. We further develop the first open-source generalist model for tables,
-                            TableLlama, by
-                            fine-tuning Llama 2 (7B) with LongLoRA to address the long context challenge. We experiment
-                            under both
-                            in-domain setting and out-of-domain setting. On 7 out of 8 in-domain tasks, TableLlama
-                            achieves comparable or better performance than the SOTA for each task, despite the latter often has
-                            task-specific
-                            design. On 6 out-of-domain datasets, it achieves 6-48 absolute point gains compared with the
-                            base model,
-                            showing that training on TableInstruct enhances the model’s generalizability. We will
-                            open-source our
-                            dataset and trained model to boost future work on developing open generalist models for
-                            tables.
+                            Modern generative search engines enhance the reliability of large language model (LLM)
+                            responses by providing cited evidence. However, evaluating the answer's attribution, i.e.,
+                            whether every claim within the generated responses is fully supported by its cited evidence,
+                            remains an open problem. This verification, traditionally dependent on costly human
+                            evaluation, underscores the urgent need for automatic attribution evaluation methods. To
+                            bridge the gap in the absence of standardized benchmarks for these methods, we present
+                            AttributionBench, a comprehensive benchmark compiled from various existing attribution
+                            datasets. Our extensive experiments on AttributionBench reveal the challenges of automatic
+                            attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that
+                            even a fine-tuned GPT-3.5 only achieves around 80% macro-F1 under a binary classification
+                            formulation. A detailed analysis of more than 300 error cases indicates that a majority of
+                            failures stem from the model's inability to process nuanced information, and the discrepancy
+                            between the information the model has access to and that human annotators do.
                           </p>
                         </div>
                       </div>
@@ -280,13 +232,38 @@
               </section>
               <!-- End paper abstract -->
 
-              <p><i>Updates</i></p>
-              <ul>
-                <li>2023/11/20: We have released the <a
-                    href="https://huggingface.co/datasets/osunlp/TableInstruct/">dataset</a>, <a
-                    href="https://huggingface.co/osunlp/TableLlama/">model</a>, and <a
-                    href="https://github.com/OSU-NLP-Group/TableLlama/">codebase</a> for the paper. Check it out!</li>
-              </ul>
+
+
+              <!-- Image carousel -->
+              <section class="hero">
+                <div class="hero-body">
+                  <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                      <div class="column is-four-fifths">
+                        <div class="item">
+                          <!-- Your image here -->
+                          <img src="static/images/AttributionBench.png"
+                            alt="An overview of AttributionBench and typical error examples.">
+                          <p>
+                            <b>Figure 1</b>: The illustration of the attribution evaluation task and two typical error
+                            examples from <b>AttributionBench</b> generated by GPT-3.5 (w/ CoT). The references are
+                            usually manually extracted from webpages by human annotators based on what they think is
+                            useful.<br><b>Left:</b> fine-grained information insensitivity (i.e., the model disregarded
+                            or overlooked nuanced details in either the claim or the references, as well as failing to
+                            do necessary summarization or inference from the given references, tasks that humans
+                            naturally perform). <br><b>Right:</b> human-model accessible information mismatch (i.e.,
+                            human annotators can see the whole webpage while the model is only given the extracted
+                            evidence, leading to different judgments.)
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- End image carousel -->
+
+
             </div>
           </div>
         </div>
@@ -300,22 +277,21 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered is-fifths-fifths">
-            <h2 class="title is-3">Our Dataset: TableInstruct</h2>
-            <div class="content has-text-justified">
-              <p>
+            <!-- <h2 class="title is-3">Our Dataset: TableInstruct</h2>
+            <div class="content has-text-justified"> -->
+            <!-- <p>
                 We construct <span><b>TableInstruct</b></span>, a comprehensive table-based instruction tuning dataset
                 that covers a variety of real-world tables and realistic tasks. We include <b>14 datasets of 11
                   tasks</b> in total, with both <b>in-domain</b> and <b>out-of-domain evaluation settings</b>. Some
                 examples can be found in the figure below:
-              </p>
-              <!-- Image carousel -->
-              <section class="hero">
+              </p> -->
+            <!-- Image carousel -->
+            <!-- <section class="hero">
                 <div class="hero-body">
                   <div class="container is-max-desktop">
                     <div class="columns is-centered">
                       <div class="column is-four-fifths">
                         <div class="item">
-                          <!-- Your image here -->
                           <img src="static/images/tablellama_figure2.png"
                             alt="The illustration of three exemplary tasks from TableInstruct">
                           <p>
@@ -334,13 +310,13 @@
                     </div>
                   </div>
                 </div>
-              </section>
-              <!-- End image carousel -->
-              <!-- <h4>Data Overview</h4> -->
-              <!-- <p><b>TableInstruct</b> incorporates samples from 14 table-based datasets of 11 distinctive tasks.</p> -->
-              <!-- <h4>Task Category</h4> -->
-              
-              <!-- <b>TableLlama</b> is an open-source LLM-based generalist model fine-tuned on <b>TableInstruct</b>.
+              </section> -->
+            <!-- End image carousel -->
+            <!-- <h4>Data Overview</h4> -->
+            <!-- <p><b>TableInstruct</b> incorporates samples from 14 table-based datasets of 11 distinctive tasks.</p> -->
+            <!-- <h4>Task Category</h4> -->
+
+            <!-- <b>TableLlama</b> is an open-source LLM-based generalist model fine-tuned on <b>TableInstruct</b>.
               Experiments show that compared with the SOTA on each task that often has special pre-training or model
               architecture design for tables, TableLlama can achieve comparable or even better performance on almost all
               of the in-domain tasks. For out-of-domain tasks, compared with the base model, TableLlama can achieve 6-48
@@ -366,175 +342,131 @@
               design. On 6 out-of-domain datasets, it achieves 6-48 absolute point gains compared with the base model,
               showing that training on TableInstruct enhances the model’s generalizability. We will open-source our
               dataset and trained model to boost future work on developing open generalist models for tables. -->
-              </p>
-            </div>
-            
+            <!-- </p>
+            </div> -->
+
             <h2 class="title is-3">Data Statistics</h2>
             <div class="content has-text-justified">
-              <p><b>TableInstruct</b> includes various kinds of table tasks to comprehensively represent different
-                table-related applications in real-world scenarios. These tasks belong to several categories: table interpretation, table
-                augmentation, question answering, fact verification, dialogue generation, and data-to-text. The table below shows the statistics of <b>TableInstruct</b>:</p>
               <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
                 <table id="myTable" class="dataTable no-footer" role="grid">
                   <thead>
-                    <tr role="row">
-                      <th style="vertical-align: bottom;">Task Category</th>
-                      <th style="vertical-align: bottom;">Task Name</th>
-                      <th style="vertical-align: bottom;">Dataset</th>
-                      <th style="vertical-align: bottom;">In-domain</th>
-                      <th style="vertical-align: bottom; text-align: middle;">Train (Table/Sample)</th>
-                      <th style="vertical-align: bottom;">Test (Table/Sample)</th>
-                      <th style="vertical-align: bottom;">min tokens</th>
-                      <th style="vertical-align: bottom;">max tokens</th>
-                      <th style="vertical-align: bottom;">median tokens</th>
-                      <!-- <th colspan="3" style="vertical-align: bottom; text-align: middle;">Input Token Length</th> -->
+                    <tr>
+                      <th>Dataset</th>
+                      <th>Question Sources</th>
+                      <th>Response Sources</th>
+                      <th>Evidence Sources</th>
+                      <th>Claim Avg. Len.</th>
+                      <th>Evidence Avg. Len.</th>
+                      <th>#Train</th>
+                      <th>#Dev</th>
+                      <th>#Test</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td rowspan="3" style="vertical-align: middle;">Table Interpretation</td>
-                      <td style="vertical-align: middle;">Column Type Annotation</td>
-                      <td rowspan="3" style="vertical-align: middle;">TURL</td>
-                      <td style="vertical-align: middle;">Yes</td>
-                      <td style="vertical-align: middle;">397K/628K</td>
-                      <td style="vertical-align: middle;">1K/2K</td>
-                      <td style="vertical-align: middle;">106</td>
-                      <td style="vertical-align: middle;">8192</td>
-                      <td style="vertical-align: middle;">2613</td>
+                      <td>ExpertQA</td>
+                      <td>Curated by domain experts</td>
+                      <td>GPT-4, Bing Chat</td>
+                      <td>Google search results, Sphere</td>
+                      <td>34.0</td>
+                      <td>515.0</td>
+                      <td>4442</td>
+                      <td>470</td>
+                      <td>612</td>
                     </tr>
                     <tr>
-                      <td style="vertical-align: middle;">Relation Extraction</td>
-                      <td style="vertical-align: middle;">Yes</td>
-                      <td style="vertical-align: middle;">53K/63K</td>
-                      <td style="vertical-align: middle;">1K/2K</td>
-                      <td style="vertical-align: middle;">2602</td>
-                      <td style="vertical-align: middle;">8192</td>
-                      <td style="vertical-align: middle;">3219</td>
+                      <td>Stanford-GenSearch</td>
+                      <td>AllSouls, davinci-debate, ELI5, WikiHow-Keywords, NaturalQuestions</td>
+                      <td>Bing Chat, NeevaAI, perplexity.ai, YouChat</td>
+                      <td>Bing Chat, NeevaAI, perplexity.ai, YouChat</td>
+                      <td>25.1</td>
+                      <td>465.2</td>
+                      <td>1510</td>
+                      <td>68</td>
+                      <td>148</td>
                     </tr>
                     <tr>
-                      <td style="vertical-align: middle;">Entity Linking</td>
-                      <td style="vertical-align: middle;">Yes</td>
-                      <td style="vertical-align: middle;">193K/1264K</td>
-                      <td style="vertical-align: middle;">1K/2K</td>
-                      <td style="vertical-align: middle;">299</td>
-                      <td style="vertical-align: middle;">8192</td>
-                      <td style="vertical-align: middle;">4667</td>
+                      <td>AttributedQA</td>
+                      <td>NaturalQuestions</td>
+                      <td>PaLM (converted into long sentence with ChatGPT)</td>
+                      <td>Wikipedia</td>
+                      <td>16.3</td>
+                      <td>139.5</td>
+                      <td>2000</td>
+                      <td>74</td>
+                      <td>230</td>
                     </tr>
                     <tr>
-                      <td rowspan="2" style="vertical-align: middle;">Table Augmentation</td>
-                      <td>Schema Augmentation</td>
-                      <td rowspan="2" style="vertical-align: middle;">TURL</td>
-                      <td style="vertical-align: middle;">Yes</td>
-                      <td style="vertical-align: middle;">288K/288K</td>
-                      <td style="vertical-align: middle;">4K/4K</td>
-                      <td style="vertical-align: middle;">160</td>
-                      <td style="vertical-align: middle;">1188</td>
-                      <td style="vertical-align: middle;">215</td>
+                      <td>LFQA</td>
+                      <td>ELI5</td>
+                      <td>WebGPT, GPT-3.5, Alpaca</td>
+                      <td>WebGPT docs, Human docs</td>
+                      <td>26.3</td>
+                      <td>141.4</td>
+                      <td>2096</td>
+                      <td>110</td>
+                      <td>168</td>
                     </tr>
                     <tr>
-                      <td>Row Population</td>
-                      <td>Yes</td>
-                      <td>286K/286K</td>
-                      <td>0.3K/0.3K</td>
-                      <td>264</td>
-                      <td>8192</td>
-                      <td>1508</td>
+                      <td><strong>ID-Total</strong></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>13322</td>
+                      <td>1198</td>
+                      <td>1610</td>
                     </tr>
                     <tr>
-                      <td rowspan="5" style="vertical-align: middle;">Question Answering</td>
-                      <td style="vertical-align: middle;">Hierarchical Table QA</td>
-                      <td style="vertical-align: middle;">HiTab</td>
-                      <td style="vertical-align: middle;">Yes</td>
-                      <td style="vertical-align: middle;">3K/7K</td>
-                      <td style="vertical-align: middle;">1K/1K</td>
-                      <td style="vertical-align: middle;">206</td>
-                      <td style="vertical-align: middle;">5616</td>
-                      <td style="vertical-align: middle;">978</td>
-                    </tr>
-                    <tr>
-                      <td style="vertical-align: middle;">Highlighted Cells QA</td>
-                      <td style="vertical-align: middle;">FeTaQA</td>
-                      <td style="vertical-align: middle;">Yes</td>
-                      <td style="vertical-align: middle;">7K/7K</td>
-                      <td style="vertical-align: middle;">2K/2K</td>
-                      <td style="vertical-align: middle;">261</td>
-                      <td style="vertical-align: middle;">5923</td>
-                      <td style="vertical-align: middle;">740</td>
-                    </tr>
-                    <tr>
-                      <td>Hybrid Table QA</td>
-                      <td>HybridQA</td>
-                      <td>No</td>
+                      <td>BEGIN</td>
+                      <td>Wizard-of-Wikipedia, CMU-DoG, TopicalChat</td>
+                      <td>GPT2-base, T5-base, CTRL-Dialog, DoHA</td>
+                      <td>Wikipedia, Reddit, news articles</td>
+                      <td>17.3</td>
+                      <td>181.2</td>
                       <td>-</td>
-                      <td>3K/3K</td>
-                      <td>248</td>
-                      <td>2497</td>
-                      <td>675</td>
-                    </tr>
-                    <tr>
-                      <td>Table QA</td>
-                      <td>WikiSQL</td>
-                      <td>No</td>
                       <td>-</td>
-                      <td>5K/16K</td>
-                      <td>198</td>
-                      <td>2091</td>
-                      <td>575</td>
+                      <td>436</td>
                     </tr>
                     <tr>
-                      <td>Table QA</td>
-                      <td>WikiTQ</td>
-                      <td>No</td>
+                      <td>HAGRID</td>
+                      <td>MIRACL</td>
+                      <td>GPT-3.5</td>
+                      <td>Wikipedia</td>
+                      <td>35.3</td>
+                      <td>148.8</td>
                       <td>-</td>
-                      <td>0.4K/4K</td>
-                      <td>263</td>
-                      <td>2688</td>
-                      <td>709</td>
-                    </tr>
-                    <tr>
-                      <td rowspan="2" style="vertical-align: middle;">Fact Verification</td>
-                      <td rowspan="2" style="vertical-align: middle;">Fact Verification</td>
-                      <td style="vertical-align: middle;">TabFact</td>
-                      <td style="vertical-align: middle;">Yes</td>
-                      <td style="vertical-align: middle;">16K/92K</td>
-                      <td style="vertical-align: middle;">2K/12K</td>
-                      <td style="vertical-align: middle;">253</td>
-                      <td style="vertical-align: middle;">4975</td>
-                      <td style="vertical-align: middle;">630</td>
-                    </tr>
-                    <tr>
-                      <td>FEVEROUS</td>
-                      <td>No</td>
                       <td>-</td>
-                      <td>4K/7K</td>
-                      <td>247</td>
-                      <td>8192</td>
-                      <td>648</td>
+                      <td>1088</td>
                     </tr>
                     <tr>
-                      <td style="vertical-align: middle;">Dialogue Generation</td>
-                      <td style="vertical-align: middle;">Table Grounded Dialogue Generation</td>
-                      <td style="vertical-align: middle;">KVRET</td>
-                      <td style="vertical-align: middle;">No</td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">0.3K/0.8K</td>
-                      <td style="vertical-align: middle;">187</td>
-                      <td style="vertical-align: middle;">1103</td>
-                      <td style="vertical-align: middle;">527</td>
+                      <td>AttrEval-GenSearch</td>
+                      <td>Curated by human annotators</td>
+                      <td>New Bing</td>
+                      <td>New Bing</td>
+                      <td>34.3</td>
+                      <td>76.3</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>162</td>
                     </tr>
                     <tr>
-                      <td style="vertical-align: middle;">Data-to-Text</td>
-                      <td style="vertical-align: middle;">Highlighted Cells Description</td>
-                      <td style="vertical-align: middle;">ToTTo</td>
-                      <td style="vertical-align: middle;">No</td>
-                      <td style="vertical-align: middle;">-</td>
-                      <td style="vertical-align: middle;">7K/8K</td>
-                      <td style="vertical-align: middle;">152</td>
-                      <td style="vertical-align: middle;">8192</td>
-                      <td style="vertical-align: middle;">246</td>
+                      <td><strong>OOD-Total</strong></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>1686</td>
                     </tr>
-                    <!-- More rows following the same pattern -->
                   </tbody>
+                  <caption>Table 1: Statistics of the datasets used in <b>AttributionBench</b>. They contain a wide
+                    range of diverse questions. 'ID' and 'OOD' denote "in-distribution" and "out-of-distribution",
+                    respectively. We make all subsets label-balanced to treat the two classes equally so that the
+                    evaluation can fairly show the performance of each class.</caption>
                 </table>
                 <!-- Additional HTML for pagination and search, if needed -->
               </div>
@@ -550,86 +482,797 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered is-fifths-fifths">
-            <h2 class="title is-3">In-domain Evaluation</h2>
-            
+            <h2 class="title is-3">ID & OOD Evaluation</h2>
+
             <div class="content has-text-justified">
-              We first evaluate <b>TableLlama</b> on 8 in-domain test sets. Due to the special semi-structured nature of tables, for most table-based tasks, existing work achieves SOTA results by using pretraining on large-scale tables and/or special model architecture design tailored for tables. Surprisingly, <b>with a unified instruction tuning format without extra special design, <b>TableLlama</b> can achieve comparable or even better performance on almost all the tasks</b>. The table below shows the results:<br><br>
-              <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
-                <table id="myTable" class="dataTable no-footer" role="grid">
-                  <thead>
-                    <tr role="row">
-                      <th style="vertical-align: bottom;">Datasets</th>
-                      <th style="vertical-align: bottom;">Metric</th>
-                      <th style="vertical-align: bottom;">Base</th>
-                      <th style="vertical-align: bottom;">TableLlama</th>
-                      <th style="vertical-align: bottom;">SOTA</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    </tr>
-                    <td style="vertical-align: bottom;">Column Type Annotation</td>
-                    <td style="vertical-align: bottom;">F1</td>
-                    <td style="vertical-align: bottom;">3.01</td>
-                    <td style="vertical-align: bottom;">94.39</td>
-                    <td style="vertical-align: bottom;"><b>94.54</b></td>
-                    </tr>
-                    <td style="vertical-align: bottom;">Relation Extraction</td>
-                    <td style="vertical-align: bottom;">F1</td>
-                    <td style="vertical-align: bottom;">0.96</td>
-                    <td style="vertical-align: bottom;">91.95</td>
-                    <td style="vertical-align: bottom;"><b>94.91</b></td>
-                    </tr>
-                    <td style="vertical-align: bottom;">Entity Linking</td>
-                    <td style="vertical-align: bottom;">Accuracy</td>
-                    <td style="vertical-align: bottom;">31.80</td>
-                    <td style="vertical-align: bottom;"><b>93.65</b></td>
-                    <td style="vertical-align: bottom;">84.90</td>
-                    </tr>
-                    <td style="vertical-align: bottom;">Schema Augmentation</td>
-                    <td style="vertical-align: bottom;">MAP</td>
-                    <td style="vertical-align: bottom;">36.75</td>
-                    <td style="vertical-align: bottom;"><b>80.50</b></td>
-                    <td style="vertical-align: bottom;">77.55</td>
-                    </tr>
-                    <td style="vertical-align: bottom;">Row Population</td>
-                    <td style="vertical-align: bottom;">MAP</td>
-                    <td style="vertical-align: bottom;">4.53</td>
-                    <td style="vertical-align: bottom;">58.44</td>
-                    <td style="vertical-align: bottom;"><b>73.31</b></td>
-                    </tr>
-                    <td style="vertical-align: bottom;">HiTab</td>
-                    <td style="vertical-align: bottom;">Exec Acc</td>
-                    <td style="vertical-align: bottom;">14.96</td>
-                    <td style="vertical-align: bottom;"><b>64.71</b></td>
-                    <td style="vertical-align: bottom;">47.00</td>
-                    </tr>
-                    <td style="vertical-align: bottom;">FeTaQA</td>
-                    <td style="vertical-align: bottom;">BLEU</td>
-                    <td style="vertical-align: bottom;">8.54</td>
-                    <td style="vertical-align: bottom;"><b>39.05</b></td>
-                    <td style="vertical-align: bottom;">33.44</td>
-                    </tr>
-                    <td style="vertical-align: bottom;">TabFact</td>
-                    <td style="vertical-align: bottom;">Accuracy</td>
-                    <td style="vertical-align: bottom;">41.65</td>
-                    <td style="vertical-align: bottom;">82.55</td>
-                    <td style="vertical-align: bottom;"><b>84.87</b></td>
-                    </tr>
-                    <!-- More rows following the same pattern -->
-                  </tbody>
-                </table>
-                <!-- Additional HTML for pagination and search, if needed -->
-              </div>
-              <div>
+              For both in-distribution (ID) and out-of-distribution (OOD) evaluation, we have the following findings:
+              <ol>
+                <li><b>Fine-tuning on NLI-related data is beneficial to attribution evaluation:</b> T5-XXL-TRUE and
+                  AttrScore-Flan-T5 (3B) are fine-tuned on data including NLI and achieve strong performance on both ID
+                  and OOD sets. Specifically, both models outperform fine-tuned GPT-3.5 for the average F1 score on OOD
+                  sets and achieve comparable performance with fine-tuned GPT-3.5 on OOD sets. Also, through further
+                  fine-tuning on AttributionBench, AttrScore-Flan-T5 (3B) outperforms the original Flan-T5 (3B) on 4 ID
+                  and 2 OOD sets.</li>
+                <li><b>Automatic attribution evaluation is challenging under zero-shot setting:</b> For tasks with
+                  shorter claims and evidence like AttribtuedQA and AttrEval-GenSearch, the performance of GPT-3.5 and
+                  GPT-4 are over 80%, while for tasks with longer evidence (like Stanford-GenSearch and HAGRID), the
+                  zero-shot performance for models is around 60%~70%, which is relatively low. For the challenging task
+                  ExpertQA, which consists of domain-specific chal-
+                  lenging questions, GPT-3.5, GPT-4 and those NLI-tuned models can only achieve under ~60% performance.
+                </li>
+                <li><b>Fine-tuning on AttributionBench benefits both ID and OOD evaluation:</b> On average among all
+                  models, fine-tuning can improve 9.0% and 4.6% on 4 ID tasks and 3 OOD tasks, respectively.
+                  Additionally, with training on only 13k examples, the fine-tuned FLAN-T5 (770M) model even
+                  surprisingly outperforms GPT-3.5 (w/ CoT) on both ID and OOD sets, indicating the effectiveness of
+                  fine-tuning on <b>AttributionBench</b>. Furthermore, almost all models obtain performance gain on 3
+                  OOD sets via fine-tuning, indicating that the models did not just overfit the ID data, but also gained
+                  generalizability to solve this task on OOD examples.</li>
+                <li><b>Simply switching stronger models cannot significantly improve the performance:</b> First, under
+                  zero-shot setting, GPT-3.5 and GPT-4 show their expertise in dealing with difficult tasks like
+                  ExpertQA, a dataset containing hard domain-specific responses and evidence. Nevertheless, on more
+                  other tasks like AttributedQA and LFQA, they still underperform smaller models like T5-XXL-TRUE and
+                  FLAN-UL2. Under fine-tuned setting, for the 4 ID sets, GPT-3.5 shows competing performance but still
+                  underperforms smaller models including FLAN-T5 (11B) and Flan-UL2 (20B). For the 3 OOD sets, the
+                  performance of GPT-3.5 on AttrEval-GenSearch and HAGRID is still lower than many models including
+                  T5-XXL-TRUE, AttrScore-Flan-T5 (3B), and most surprisingly, Flan-T5 (3B) and Flan-T5 (770M). </li>
+              </ol>
               <br>
-              Specifically, we observed the following takeaways:
-                <ol>
-                  <li>By simply fine-tuning a large language model on TableInstruct, TableLlama can achieve comparable or even better performance on almost all the tasks <b>without any table pretraining or special table model architecture design</b>;</li>
-                  <li><b>TableLlama displays advantages in table QA tasks</b>: <b>TableLlama</b> can surpass the SOTA by <b>5.61 points</b> for highlighted cell based table QA task (i.e., FeTaQA) and <b>17.71 points</b> for hierarchical table QA (i.e., HiTab), which is full of numerical reasoning on tables. As LLMs have been shown superior in interacting with humans and answering questions, this indicates that <b>the existing underlying strong language understanding ability of LLMs may be beneficial for such table QA tasks, despite with semi-structured tables</b>;</li>
-                  <li><b>For the entity linking task</b>, which requires the model to link the mention in a table cell to the correct referent entity in Wikidata, <b>TableLlama</b> <b>also presents superior performance with 8 points gain over the SOTA performance</b>. Since the candidates are composed of their referent entity name and description, we hypothesize LLMs have certain abilities to understand the description which help identify the correct entities;</li>
-                  <li>Row population is the only task where <b>TableLlama</b> has a large performance gap compared to the SOTA. We observe that, <b>in order to correctly populate the entities from the given large number of candidates, the model needs to fully understand the inherent relation between the enquiried entity and each given candidate, which is still challenging for the current model</b>. Detailed analysis and case study can be found in our paper's <b>Section 4.1</b> and <b>Table 5 in Appendix A</b>.</li>
-                </ol>
+              <br>
+              <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
+                <table id="myTable" class="dataTable no-footer" role="grid">
+                  <thead>
+                    <tr>
+                      <th>Setting</th>
+                      <th>Model (Size)</th>
+                      <th colspan="3">ExpertQA</th>
+                      <th colspan="3">Stanford-GenSearch</th>
+                      <th colspan="3">AttributedQA</th>
+                      <th colspan="3">LFQA</th>
+                      <th>ID-Avg.</th>
+                    </tr>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th>F1↑</th>
+                      <th>FP↓</th>
+                      <th>FN↓</th>
+                      <th>F1↑</th>
+                      <th>FP↓</th>
+                      <th>FN↓</th>
+                      <th>F1↑</th>
+                      <th>FP↓</th>
+                      <th>FN↓</th>
+                      <th>F1↑</th>
+                      <th>FP↓</th>
+                      <th>FN↓</th>
+                      <th>F1↑</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="11">Zero-shot</td>
+                      <td>FLAN-T5 (770M)</td>
+                      <td>38.2</td>
+                      <td>1.3</td>
+                      <td>47.4</td>
+                      <td>73.5</td>
+                      <td>15.0</td>
+                      <td>11.5</td>
+                      <td>80.4</td>
+                      <td>12.2</td>
+                      <td>7.4</td>
+                      <td>37.2</td>
+                      <td>0.0</td>
+                      <td>48.2</td>
+                      <td>57.3</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (3B)</td>
+                      <td>55.6</td>
+                      <td>15.8</td>
+                      <td>27.9</td>
+                      <td><strong>74.0</strong></td>
+                      <td>17.2</td>
+                      <td>8.7</td>
+                      <td>79.8</td>
+                      <td>15.2</td>
+                      <td>4.8</td>
+                      <td>75.3</td>
+                      <td>6.5</td>
+                      <td>17.9</td>
+                      <td>71.2</td>
+                    </tr>
+                    <tr>
+                      <td>AttrScore-FLAN-T5 (3B)</td>
+                      <td>55.7</td>
+                      <td>32.4</td>
+                      <td>9.6</td>
+                      <td>64.6</td>
+                      <td>27.3</td>
+                      <td>6.5</td>
+                      <td>80.5</td>
+                      <td>16.5</td>
+                      <td>2.6</td>
+                      <td>71.4</td>
+                      <td>21.4</td>
+                      <td>6.5</td>
+                      <td>68.1</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (11B)</td>
+                      <td>52.0</td>
+                      <td>36.4</td>
+                      <td>7.5</td>
+                      <td>59.2</td>
+                      <td>32.7</td>
+                      <td>5.0</td>
+                      <td>78.6</td>
+                      <td>18.3</td>
+                      <td>2.6</td>
+                      <td>79.8</td>
+                      <td>10.1</td>
+                      <td>10.1</td>
+                      <td>67.4</td>
+                    </tr>
+                    <tr>
+                      <td>T5-XXL-TRUE (11B)</td>
+                      <td>54.5</td>
+                      <td>17.8</td>
+                      <td>27.3</td>
+                      <td>68.5</td>
+                      <td>16.2</td>
+                      <td>15.3</td>
+                      <td><strong>85.2</strong></td>
+                      <td>7.8</td>
+                      <td>7.0</td>
+                      <td><strong>80.4</strong></td>
+                      <td>1.2</td>
+                      <td>17.9</td>
+                      <td>72.2</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-UL2 (20B)</td>
+                      <td><strong>59.4</strong></td>
+                      <td>22.5</td>
+                      <td>18.0</td>
+                      <td>72.5</td>
+                      <td>19.2</td>
+                      <td>8.0</td>
+                      <td>82.5</td>
+                      <td>13.0</td>
+                      <td>4.3</td>
+                      <td>80.1</td>
+                      <td>4.2</td>
+                      <td>15.5</td>
+                      <td><strong>73.6</strong></td>
+                    </tr>
+                    <tr>
+                      <td>AttrScore-Alpaca (7B)</td>
+                      <td>47.4</td>
+                      <td>11.1</td>
+                      <td>37.7</td>
+                      <td>68.6</td>
+                      <td>21.2</td>
+                      <td>9.8</td>
+                      <td>79.0</td>
+                      <td>14.8</td>
+                      <td>6.1</td>
+                      <td>68.7</td>
+                      <td>10.1</td>
+                      <td>20.8</td>
+                      <td>65.9</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-3.5 (w/o CoT)</td>
+                      <td>55.3</td>
+                      <td>30.4</td>
+                      <td>12.1</td>
+                      <td>62.0</td>
+                      <td>30.5</td>
+                      <td>3.8</td>
+                      <td>74.7</td>
+                      <td>20.9</td>
+                      <td>3.5</td>
+                      <td>72.6</td>
+                      <td>22.0</td>
+                      <td>4.2</td>
+                      <td>66.2</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-3.5 (w/ CoT)</td>
+                      <td><strong>60.4</strong></td>
+                      <td>23.0</td>
+                      <td>16.2</td>
+                      <td>66.1</td>
+                      <td>25.5</td>
+                      <td>7.2</td>
+                      <td>78.9</td>
+                      <td>14.3</td>
+                      <td>6.5</td>
+                      <td>73.4</td>
+                      <td>19.6</td>
+                      <td>6.5</td>
+                      <td>69.7</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-4 (w/o CoT)</td>
+                      <td>56.5</td>
+                      <td>32.8</td>
+                      <td>8.0</td>
+                      <td>59.8</td>
+                      <td>33.2</td>
+                      <td>3.5</td>
+                      <td>81.0</td>
+                      <td>15.7</td>
+                      <td>3.0</td>
+                      <td>71.6</td>
+                      <td>23.2</td>
+                      <td>4.2</td>
+                      <td>67.2</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-4 (w/ CoT)</td>
+                      <td>59.2</td>
+                      <td>26.3</td>
+                      <td>13.9</td>
+                      <td><strong>71.7</strong></td>
+                      <td>19.5</td>
+                      <td>8.5</td>
+                      <td><strong>82.2</strong></td>
+                      <td>10.0</td>
+                      <td>7.8</td>
+                      <td><strong>80.2</strong></td>
+                      <td>14.9</td>
+                      <td>4.8</td>
+                      <td><strong>73.3</strong></td>
+                    </tr>
+                    <tr>
+                      <td rowspan="10">Fine-tuned</td>
+                      <td>Roberta-large-mnli (330M)</td>
+                      <td>52.0</td>
+                      <td>13.1</td>
+                      <td>33.0</td>
+                      <td>64.7</td>
+                      <td>14.0</td>
+                      <td>21.2</td>
+                      <td>71.5</td>
+                      <td>10.0</td>
+                      <td>18.3</td>
+                      <td>68.0</td>
+                      <td>24.4</td>
+                      <td>6.5</td>
+                      <td>64.1</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (770M)</td>
+                      <td>55.0</td>
+                      <td>32.7</td>
+                      <td>10.0</td>
+                      <td>75.2</td>
+                      <td>16.0</td>
+                      <td>8.7</td>
+                      <td>81.6</td>
+                      <td>13.5</td>
+                      <td>4.8</td>
+                      <td>83.3</td>
+                      <td>9.5</td>
+                      <td>7.1</td>
+                      <td>73.8</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (3B)</td>
+                      <td>54.9</td>
+                      <td>33.8</td>
+                      <td>8.3</td>
+                      <td>79.8</td>
+                      <td>10.7</td>
+                      <td>9.5</td>
+                      <td>82.1</td>
+                      <td>12.2</td>
+                      <td>5.7</td>
+                      <td>89.3</td>
+                      <td>6.0</td>
+                      <td>4.8</td>
+                      <td>76.5</td>
+                    </tr>
+                    <tr>
+                      <td>AttrScore-FLAN-T5 (3B)</td>
+                      <td>56.8</td>
+                      <td>30.2</td>
+                      <td>11.4</td>
+                      <td>81.0</td>
+                      <td>10.0</td>
+                      <td>9.0</td>
+                      <td>82.5</td>
+                      <td>11.7</td>
+                      <td>5.7</td>
+                      <td><strong>90.5</strong></td>
+                      <td>4.2</td>
+                      <td>5.4</td>
+                      <td>77.7</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (11B)</td>
+                      <td><strong>61.8</strong></td>
+                      <td>21.9</td>
+                      <td>16.2</td>
+                      <td>81.7</td>
+                      <td>9.5</td>
+                      <td>8.8</td>
+                      <td>83.4</td>
+                      <td>11.7</td>
+                      <td>4.8</td>
+                      <td>86.9</td>
+                      <td>6.0</td>
+                      <td>7.1</td>
+                      <td><strong>78.5</strong></td>
+                    </tr>
+                    <tr>
+                      <td>T5-XXL-TRUE (11B)</td>
+                      <td>57.1</td>
+                      <td>30.1</td>
+                      <td>11.3</td>
+                      <td><strong>81.8</strong></td>
+                      <td>9.5</td>
+                      <td>8.7</td>
+                      <td>83.4</td>
+                      <td>12.6</td>
+                      <td>3.9</td>
+                      <td>86.3</td>
+                      <td>4.8</td>
+                      <td>8.9</td>
+                      <td>77.2</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-UL2 (20B)</td>
+                      <td>61.6</td>
+                      <td>24.8</td>
+                      <td>13.1</td>
+                      <td><strong>81.8</strong></td>
+                      <td>8.2</td>
+                      <td>10.0</td>
+                      <td><strong>84.3</strong></td>
+                      <td>10.0</td>
+                      <td>5.7</td>
+                      <td>86.3</td>
+                      <td>7.1</td>
+                      <td>6.5</td>
+                      <td><strong>78.5</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Llama-2 (7B)</td>
+                      <td>60.5</td>
+                      <td>17.2</td>
+                      <td>22.2</td>
+                      <td>80.2</td>
+                      <td>10.5</td>
+                      <td>9.3</td>
+                      <td>79.9</td>
+                      <td>13.5</td>
+                      <td>6.5</td>
+                      <td><strong>85.6</strong></td>
+                      <td>3.0</td>
+                      <td>11.3</td>
+                      <td>76.6</td>
+                    </tr>
+                    <tr>
+                      <td>AttrScore-Alpaca (7B)</td>
+                      <td><strong>61.3</strong></td>
+                      <td>16.3</td>
+                      <td>22.2</td>
+                      <td><strong>82.8</strong></td>
+                      <td>8.2</td>
+                      <td>9.0</td>
+                      <td>80.4</td>
+                      <td>11.3</td>
+                      <td>8.3</td>
+                      <td>84.5</td>
+                      <td>6.5</td>
+                      <td>8.9</td>
+                      <td>77.3</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-3.5 (w/o CoT)</td>
+                      <td>61.1</td>
+                      <td>18.8</td>
+                      <td>19.9</td>
+                      <td>82.0</td>
+                      <td>6.7</td>
+                      <td>11.3</td>
+                      <td><strong>83.9</strong></td>
+                      <td>8.7</td>
+                      <td>7.4</td>
+                      <td>83.9</td>
+                      <td>6.5</td>
+                      <td>9.5</td>
+                      <td><strong>77.7</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Avg. Gain*</td>
+                      <td></td>
+                      <td>6.4</td>
+                      <td>6.0</td>
+                      <td>-9.9</td>
+                      <td>12.4</td>
+                      <td>-11.9</td>
+                      <td>0.4</td>
+                      <td>2.1</td>
+                      <td>-2.6</td>
+                      <td>0.6</td>
+                      <td>15.6</td>
+                      <td>-2.8</td>
+                      <td>-10.7</td>
+                      <td>9.0</td>
+                    </tr>
+                  </tbody>
+                  <caption style="text-align: left;">
+                    Table 1: The baseline performance (macro-F1 score) with different models on the 4 ID test sets of
+                    <b>AttributionBench</b>. The best performance within each setting is marked in <b>bold</b>. FP:
+                    false positive percentage (the ground truth is 'not attributable' but the model predicts
+                    'attributable'). FN: false negative percentage (vice versa). ID-Avg.: the average score of F1 on 4
+                    ID test sets. '↑' and '↓' represent higher and lower is better, respectively. *: The 'Avg. Gain' is
+                    calculated by averaging the performance gain of each model that is both zero-shot prompted and
+                    fine-tuned after being fine-tuned compared to being zero-shot prompted (If a model is only in one
+                    setting, its gain isn't included in the average). <b>The results demonstrate the effectiveness of
+                      fine-tuning on the training set of AttributionBench on ID evaluation, but there is still a large
+                      room for improvement.</b>
+                  </caption>
+                </table>
               </div>
+              <br>
+              <br>
+              <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
+                <table id="myTable" class="dataTable no-footer" role="grid">
+                  <caption style="text-align: left;">Table 2: The baseline performance (Macro-F1 score) with different
+                    models on the 3 OOD test sets of <b>AttributionBench</b>. The best performance within each setting
+                    is marked in <b>bold</b>. FP: false positive percentage (the ground truth is 'not attributable' but
+                    the model predicts 'attributable'). FN: false negative percentage (vice versa). OOD-Avg.: the
+                    average score of F1 on 3 OOD test sets. '↑' and '↓' represent higher and lower is better,
+                    respectively. *: The 'Avg. Gain' is calculated by averaging the performance gain of each model (that
+                    is both zero-shot prompted and fine-tuned) after being fine-tuned compared to being zero-shot
+                    prompted. Fine-tuned results demonstrate fine-tuning on the training set of AttributionBench not
+                    only improves ID performance but also improves generalizability.</caption>
+                  <thead>
+                    <tr>
+                      <th>Setting</th>
+                      <th>Model (Size)</th>
+                      <th colspan="3">BEGIN</th>
+                      <th colspan="3">AttrEval-GenSearch</th>
+                      <th colspan="3">HAGRID</th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th>F1 ↑</th>
+                      <th>FP ↓</th>
+                      <th>FN ↓</th>
+                      <th>F1 ↑</th>
+                      <th>FP ↓</th>
+                      <th>FN ↓</th>
+                      <th>F1 ↑</th>
+                      <th>FP ↓</th>
+                      <th>FN ↓</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="11">Zero-shot</td>
+                      <td>FLAN-T5 (770M)</td>
+                      <td>79.6</td>
+                      <td>9.2</td>
+                      <td>11.2</td>
+                      <td>80.8</td>
+                      <td>6.2</td>
+                      <td>13.0</td>
+                      <td>75.9</td>
+                      <td>13.1</td>
+                      <td>10.9</td>
+                      <td>78.8</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (3B)</td>
+                      <td>80.2</td>
+                      <td>13.3</td>
+                      <td>6.4</td>
+                      <td>82.0</td>
+                      <td>6.2</td>
+                      <td>11.7</td>
+                      <td><strong>79.0</strong></td>
+                      <td>16.9</td>
+                      <td>3.8</td>
+                      <td>80.4</td>
+                    </tr>
+                    <tr>
+                      <td>AttrScore-FLAN-T5 (3B)</td>
+                      <td>78.9</td>
+                      <td>17.7</td>
+                      <td>3.0</td>
+                      <td>76.3</td>
+                      <td>16.7</td>
+                      <td>6.8</td>
+                      <td>68.6</td>
+                      <td>26.9</td>
+                      <td>2.6</td>
+                      <td>74.6</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (11B)</td>
+                      <td>72.3</td>
+                      <td>25</td>
+                      <td>1.1</td>
+                      <td>78.1</td>
+                      <td>16.7</td>
+                      <td>4.9</td>
+                      <td>64.5</td>
+                      <td>30.6</td>
+                      <td>2.0</td>
+                      <td>71.6</td>
+                    </tr>
+                    <tr>
+                      <td>T5-XXL-TRUE (11B)</td>
+                      <td><strong>86.4</strong></td>
+                      <td>4.8</td>
+                      <td>8.7</td>
+                      <td>76.4</td>
+                      <td>2.5</td>
+                      <td>20.4</td>
+                      <td>78.6</td>
+                      <td>14.4</td>
+                      <td>6.8</td>
+                      <td>80.5</td>
+                    </tr>
+                    <tr>
+                      <td>Flan-UL2 (20B)</td>
+                      <td>82.2</td>
+                      <td>13.1</td>
+                      <td>4.6</td>
+                      <td><strong>87.7</strong></td>
+                      <td>5.6</td>
+                      <td>6.8</td>
+                      <td>73.9</td>
+                      <td>21.4</td>
+                      <td>3.9</td>
+                      <td><strong>81.3</strong></td>
+                    </tr>
+                    <tr>
+                      <td>AttrScore-Alpaca (7B)</td>
+                      <td>75.9</td>
+                      <td>20.4</td>
+                      <td>3.0</td>
+                      <td>82.1</td>
+                      <td>6.8</td>
+                      <td>11.1</td>
+                      <td>73.9</td>
+                      <td>19.9</td>
+                      <td>5.6</td>
+                      <td>77.3</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-3.5 (w/o CoT)</td>
+                      <td><strong>79.4</strong></td>
+                      <td>15.8</td>
+                      <td>4.4</td>
+                      <td>76.7</td>
+                      <td>18.5</td>
+                      <td>4.3</td>
+                      <td>70.1</td>
+                      <td>25.2</td>
+                      <td>2.8</td>
+                      <td>75.4</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-3.5 (w/ CoT)</td>
+                      <td>77.6</td>
+                      <td>14.9</td>
+                      <td>7.3</td>
+                      <td>82.1</td>
+                      <td>11.1</td>
+                      <td>6.8</td>
+                      <td>74.0</td>
+                      <td>19.7</td>
+                      <td>5.1</td>
+                      <td>77.9</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-4 (w/o CoT)</td>
+                      <td>77.5</td>
+                      <td>19.7</td>
+                      <td>2.1</td>
+                      <td><strong>84.3</strong></td>
+                      <td>14.2</td>
+                      <td>1.2</td>
+                      <td>72.1</td>
+                      <td>23.9</td>
+                      <td>2.8</td>
+                      <td>78.0</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-4 (w/ CoT)</td>
+                      <td>77.5</td>
+                      <td>18.3</td>
+                      <td>3.7</td>
+                      <td>83.3</td>
+                      <td>8.0</td>
+                      <td>8.6</td>
+                      <td><strong>75.9</strong></td>
+                      <td>18.5</td>
+                      <td>5.2</td>
+                      <td><strong>78.9</strong></td>
+                    </tr>
+                    <tr>
+                      <td rowspan="10">Fine-tuned</td>
+                      <td>Roberta-large-mnli (330M)</td>
+                      <td>60.9</td>
+                      <td>6.2</td>
+                      <td>27.2</td>
+                      <td>65.1</td>
+                      <td>26.1</td>
+                      <td>11.8</td>
+                      <td>61.3</td>
+                      <td>9.2</td>
+                      <td>28.4</td>
+                      <td>62.4</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (770M)</td>
+                      <td>79.6</td>
+                      <td>9.2</td>
+                      <td>11.2</td>
+                      <td>80.8</td>
+                      <td>6.2</td>
+                      <td>13.0</td>
+                      <td>75.9</td>
+                      <td>13.1</td>
+                      <td>10.9</td>
+                      <td>78.8</td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (3B)</td>
+                      <td>80.2</td>
+                      <td>13.3</td>
+                      <td>6.4</td>
+                      <td>82.0</td>
+                      <td>6.2</td>
+                      <td>11.7</td>
+                      <td><strong>79.0</strong></td>
+                      <td>16.9</td>
+                      <td>3.8</td>
+                      <td>80.4</td>
+                    </tr>
+                    <tr>
+                      <td>AttrScore-FLAN-T5 (3B)</td>
+                      <td>90.8</td>
+                      <td>6.7</td>
+                      <td>2.5</td>
+                      <td><strong>85.1</strong></td>
+                      <td>4.3</td>
+                      <td>10.5</td>
+                      <td>76.6</td>
+                      <td>19.0</td>
+                      <td>3.9</td>
+                      <td><strong>84.2</strong></td>
+                    </tr>
+                    <tr>
+                      <td>FLAN-T5 (11B)</td>
+                      <td>90.6</td>
+                      <td>7.8</td>
+                      <td>1.6</td>
+                      <td><strong>85.1</strong></td>
+                      <td>4.3</td>
+                      <td>10.5</td>
+                      <td>67.7</td>
+                      <td>27.1</td>
+                      <td>3.4</td>
+                      <td>81.1</td>
+                    </tr>
+                    <tr>
+                      <td>T5-XXL-TRUE (11B)</td>
+                      <td><strong>91.5</strong></td>
+                      <td>7.1</td>
+                      <td>1.4</td>
+                      <td>81.4</td>
+                      <td>6.2</td>
+                      <td>12.3</td>
+                      <td>77.3</td>
+                      <td>18.6</td>
+                      <td>3.6</td>
+                      <td>83.4</td>
+                    </tr>
+                    <tr>
+                      <td>Flan-UL2 (20B)</td>
+                      <td>90.1</td>
+                      <td>6.9</td>
+                      <td>3.0</td>
+                      <td><strong>85.1</strong></td>
+                      <td>4.9</td>
+                      <td>9.9</td>
+                      <td>67.8</td>
+                      <td>26.6</td>
+                      <td>4.0</td>
+                      <td>81.0</td>
+                    </tr>
+                    <tr>
+                      <td>Llama-2 (7B)</td>
+                      <td>84.1</td>
+                      <td>10.6</td>
+                      <td>5.3</td>
+                      <td>83.3</td>
+                      <td>6.8</td>
+                      <td>9.9</td>
+                      <td>73.0</td>
+                      <td>22.5</td>
+                      <td>3.5</td>
+                      <td>80.1</td>
+                    </tr>
+                    <tr>
+                      <td>AttrScore-Alpaca (7B)</td>
+                      <td>85.1</td>
+                      <td>9.2</td>
+                      <td>5.7</td>
+                      <td>81.9</td>
+                      <td>4.3</td>
+                      <td>13.6</td>
+                      <td>76.4</td>
+                      <td>18.3</td>
+                      <td>4.9</td>
+                      <td>81.1</td>
+                    </tr>
+                    <tr>
+                      <td>GPT-3.5 (w/o CoT)</td>
+                      <td><b>86.8</b></td>
+                      <td>11.0</td>
+                      <td>2.1</td>
+                      <td>81.3</td>
+                      <td>4.9</td>
+                      <td>13.6</td>
+                      <td><b>77.6</b></td>
+                      <td>16.9</td>
+                      <td>5.1</td>
+                      <td><b>81.9</b></td>
+                    </tr>
+                    <tr>
+                      <td>Avg. Gain*</td>
+                      <td></td>
+                      <td>9.9</td>
+                      <td>-6.6</td>
+                      <td>-3.2</td>
+                      <td>2.5</td>
+                      <td>-4.1</td>
+                      <td>1.6</td>
+                      <td>1.0</td>
+                      <td>0.3</td>
+                      <td>-1.2</td>
+                      <td>4.6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <br>
+              <br>
+              <br>
+              <p>
+                We also report the average macro-F1 score on 7 test sets of GPT-3.5 with different input fields. Q, C, E, R stands for question, claim, evidence, and response, respectively. Results show that <b>merely appending the questions and responses to the input, which human annotators might have access to, is not the key to solving this task.</b>
+              </p>
+              <div class="item" style="text-align: center;">
+                <img src="static/images/input_fields.png"
+                  alt="" style="margin: 0 auto;"/>
+              </div>
+
+              <br>
+              <br>
+              <br>
+              <p>
+                We also show the performance of GPT-3.5 (w/ CoT) with several different prompts. Prompt engineering only brings limited gain over 7 test sets. Rather than bringing little gain in overall performance (<b>top</b>), adjusting prompts is actually changing the ratio of FP and FN cases (<b>bottom</b>). 'comp_und' stands for 'comprehensive understanding'.
+              </p>
+              <div class="item" style="text-align: center;">
+                <img src="static/images/impact_of_instructions.png"
+                  alt="" style="margin: 0 auto;"/>
+                  <img src="static/images/impact_of_instructions-1.png"
+                  alt="" style="margin: 0 auto;"/>
+              </div>
+                        
             </div>
           </div>
         </div>
@@ -643,85 +1286,80 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered is-fifths-fifths">
-            <h2 class="title is-3">Out-of-domain Evaluation</h2>
+            <h2 class="title is-3">Error Analysis</h2>
             <div class="content has-text-justified">
-              To show the model's generalizability on unseen data and unseen tasks, we evaluate <b>TableLlama</b> on several out-of-domain datasets. <b>Overall, <b>TableLlama</b> shows a remarkable generalizability on different out-of-domain tasks, by outperforming the baselines from 6 to 48 absolute points</b>. The table below shows the results:
-              <!-- To better understand how TableInstruct helps enhance model generalizability, we conduct an ablation study to show the transfer between individual datasets. -->
-              <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
-                <table id="myTable" class="dataTable no-footer" role="grid">
-                  <thead>
-                    <tr role="row">
-                      <th style="vertical-align: bottom;">Datasets</th>
-                      <th style="vertical-align: bottom;">Metric</th>
-                      <th style="vertical-align: bottom;">Base</th>
-                      <th style="vertical-align: bottom;">TableLlama</th>
-                      <th style="vertical-align: bottom;">SOTA</th>
-                      <th style="vertical-align: bottom;">&#9650 Base</th>
-                    </tr>
+              Through a detailed error analysis, we observed the following takeaways:
+              <ol>
+                <li><b>Over 66% error cases are caused by fine-grained information insensitivity:</b> This means when making a wrong judgment, the model is most likely to fail in comparing fine-grained information within the claim and the evidence. Here, 'fine-grained information' encompasses a wide array of specifics, from discrete data points such as numerical figures, dates, names, and locations, to more complex elements like particular events or logical connections.
+                </li>
+                <li><b>About 26.8% errors are caused by the mismatch between information accessible to the model and that accessible to human annotators:</b> This disparity brings into question the reliability of labels within current attribution evaluation datasets. Our analysis suggests that, in certain cases, determining the label based solely on the provided claim and evidence can be challenging due to insufficient information or ambiguous references (error type: need additional information/reference ambiguity).
+                </li>
+                <br>
+                <style>
+                  .mygreen {
+                      background-color: #E0ECD4; /* Light green */
+                  }
+                  .myred {
+                      background-color: #F8CCCC; /* Light red */
+                  }
+                  </style>
+                <div id="myTable_wrapper" class="dataTables_wrapper no-footer">
+                  <table id="myTable" class="dataTable no-footer" role="grid">
+                    <thead>
+                      <tr>
+                          <th style="width: 14%;">Error Type (%)</th>
+                          <th style="width: 86%;">Example</th>
+                      </tr>
                   </thead>
                   <tbody>
-                    <tr role="row">
-                      <td style="vertical-align: bottom;">FEVEROUS</td>
-                      <td style="vertical-align: bottom;">Accuracy</td>
-                      <td style="vertical-align: bottom;">23.66</td>
-                      <td style="vertical-align: bottom;">72.30</td>
-                      <td style="vertical-align: bottom;">82.40</td>
-                      <td style="vertical-align: bottom;">+48.64</td>
-                    </tr>
-                    <tr role="row">
-                      <td style="vertical-align: bottom;">HybridQA</td>
-                      <td style="vertical-align: bottom;">Accuracy</td>
-                      <td style="vertical-align: bottom;">20.72</td>
-                      <td style="vertical-align: bottom;">27.61</td>
-                      <td style="vertical-align: bottom;">63.40</td>
-                      <td style="vertical-align: bottom;">+6.89</td>
-                    </tr>
-                    <tr role="row">
-                      <td style="vertical-align: bottom;">KVRET</td>
-                      <td style="vertical-align: bottom;">Micro F1</td>
-                      <td style="vertical-align: bottom;">38.90</td>
-                      <td style="vertical-align: bottom;">48.73</td>
-                      <td style="vertical-align: bottom;">67.80</td>
-                      <td style="vertical-align: bottom;">+9.83</td>
-                    </tr>
-                    <tr role="row">
-                      <td style="vertical-align: bottom;">ToTTo</td>
-                      <td style="vertical-align: bottom;">BLEU</td>
-                      <td style="vertical-align: bottom;">10.39</td>
-                      <td style="vertical-align: bottom;">20.77</td>
-                      <td style="vertical-align: bottom;">48.95</td>
-                      <td style="vertical-align: bottom;">+10.38</td>
-                    </tr>
-                    <tr>
-                      <td style="vertical-align: bottom;">WikiSQL</td>
-                      <td style="vertical-align: bottom;">Accuracy</td>
-                      <td style="vertical-align: bottom;">14.84</td>
-                      <td style="vertical-align: bottom;">41.68</td>
-                      <td style="vertical-align: bottom;">89.50</td>
-                      <td style="vertical-align: bottom;">+26.84</td>
-                    </tr>
-                    <tr>
-                      <td style="vertical-align: bottom;">WikiTQ</td>
-                      <td style="vertical-align: bottom;">Accuracy</td>
-                      <td style="vertical-align: bottom;">25.48</td>
-                      <td style="vertical-align: bottom;">31.63</td>
-                      <td style="vertical-align: bottom;">57.50</td>
-                      <td style="vertical-align: bottom;">+6.15</td>
-                    </tr>
-                    <!-- More rows following the same pattern -->
+                      <tr>
+                          <td>Fine-grained information insensitivity (66.0%)</td>
+                          <td>
+                              <b>Claim:</b> He was once an important member of the Party but <span class="mygreen">became a traitor</span>.<br>
+                              <b>Evidence:</b> He seems to have been a Party leader who <span class="mygreen">fell out of favor with the regime</span>.<br>
+                              <b>Human-annotated Ground truth:</b> <span class="mygreen">not attributable</span><br>
+                              <b>GPT-3.5 (w/ CoT):</b> The reference supports the claim as it indicates that the person was once an important member of the Party (Party leader) but then <span class="mygreen">fell out of favor with the regime</span>, <span class="myred">which aligns with the claim of</span> <span class="myred">becoming a traitor</span>. Final judgment: <span class="myred">attributable</span>.
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Need additional information/reference ambiguity (15.6%)</td>
+                          <td>
+                              <b>Claim:</b> <span class="myred">Kellie Pickler</span> won season 16 of Dancing with the Stars.<br>
+                              <b>Evidence:</b> Title: Dancing with the Stars (American season 16)<br><br><span class="mygreen">Pickler</span> and her partner Derek Hough won the competition, marking his fourth of six wins and increasing his lead on the show as the professional dancer who has won the most mirror ball trophies.<br>
+                              <b>Human-annotated Ground truth:</b> <span class="mygreen">not attributable</span><br>
+                              <b>GPT-3.5 (w/ CoT):</b> The reference supports the claim. <span class="mygreen">Kellie Pickler</span> did indeed win season 16 of Dancing with the Stars, as mentioned in the reference. Final judgment: attributable.
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>Label issue (11.2%)</td>
+                          <td>
+                              <b>Claim:</b> Ireland last qualified for the World Cup in 2002, <span class="myred">as highlighted in and</span>.<br>
+                              <b>Evidence:</b> By the time of their next potential appearance, in 2026, Ireland will not have been involved in the finals since they took La Roja to penalties in a campaign lit up by the goals of the talismanic Robbie Keane 24 years earlier.<br>
+                              <b>Human-annotated Ground Truth:</b> <span class="myred">attributable</span><br>
+                              <b>GPT-3.5 (w/ CoT):</b> The reference does not support the claim. The reference only mentions Ireland's potential appearance in the 2026 World Cup and their absence from the finals since 1994, but it does not specifically mention their last qualification in 2002. Therefore, the reference does not support the claim. Final judgment: <span class="mygreen">not attributable</span>.
+                          </td>
+                      </tr>
                   </tbody>
-                </table>
-                <!-- Additional HTML for pagination and search, if needed -->
-              </div>
-              <div>
+                  </table>
+                  <!-- Additional HTML for pagination and search, if needed -->
+                </div>
                 <br>
-                Specifically, we observed the following takeaways:
-                <ol>
-                  <li><b>By learning from the table-based training tasks, the model has acquired essential underlying table understanding ability, which can be transferred to other table-based tasks/datasets and facilitate their performance;</b></li>
-                  <li>FEVEROUS exhibits the largest gain over the other 5 datasets. This is likely because the fact verification task is an in-domain training task, although the dataset is unseen during training. <b>Compared with cross-task generalization, it may be easier to generalize to different datasets belonging to the same tasks</b>;</li>
-                  <li>Although there's a gap between <b>TableLlama</b> results and SOTA performances, <b>those SOTAs were achieved under full-dataset training while TableLlama is zero-shot</b>. Nevertheless, we hope our work can inspire future work to further improve the zero-shot performance.</li>
-                </ol>
-              </div>
+                <li>Within 'fine-grained information insensitivity', the model also makes different kinds of mistakes regarding its label error class, i.e., false positive or false negative. In the case of false positives, the model misses certain details within the claim 43% of the time, and in 41% of the instances, it made incorrect connections and inferences to indicate the claim being supported by the evidence, which is actually wrong. Conversely, within the false negative category, the model predominantly misinterprets or neglects details in the evidence around 46% of the time, and 39% of them are because of lacking necessary inference and summarization to reach the attribution judgment, which could be very easy for humans.
+                </li>
+                <div class="item" style="text-align: center;">
+                  <img src="static/images/Error_Types_within_Fine-grained_Information_Insensitivity.png"
+                    alt="" style="margin: 0 auto;"/>
+                </div>
+                <br>
+                <p>
+                  We also show the error case distribution in 7 test sets:
+                </p>
+                <div class="item" style="text-align: center;">
+                  <img src="static/images/Error_Examples_Distribution_in_7_Test_Sets copy.png"
+                    alt="" style="margin: 0 auto;"/>
+                </div>
+              </ol>
+              
             </div>
           </div>
         </div>
@@ -735,17 +1373,117 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">Reference</h2>
-      Please kindly cite our paper if you use our code, data, models or results:
+      Please kindly cite our paper if you use our code, data, or results:
       <br><br>
-      <pre><code>@misc{zhang2023tablellama,
-  title={TableLlama: Towards Open Large Generalist Models for Tables}, 
-  author={Tianshu Zhang and Xiang Yue and Yifei Li and Huan Sun},
-  year={2023},
-  eprint={2311.09206},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL}
-}
+      <pre><code>@misc{li2024attributionbench,
+            title={AttributionBench: How Hard is Automatic Attribution Evaluation?}, 
+            author={Yifei Li and Xiang Yue and Zeyi Liao and Huan Sun},
+            year={2024},
+            eprint={2402.15089},
+            archivePrefix={arXiv},
+            primaryClass={cs.CL}
+      }
       </code></pre>
+      If used, please also cite the original datasets accordingly:
+      <br><br>
+      <pre><code>@misc{malaviya2023expertqa,
+        title={ExpertQA: Expert-Curated Questions and Attributed Answers}, 
+        author={Chaitanya Malaviya and Subin Lee and Sihao Chen and Elizabeth Sieber and Mark Yatskar and Dan Roth},
+        year={2023},
+        eprint={2309.07852},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL}
+      }
+      </code></pre>
+      <pre><code>@inproceedings{liu-etal-2023-evaluating,
+          title = "Evaluating Verifiability in Generative Search Engines",
+          author = "Liu, Nelson  and
+            Zhang, Tianyi  and
+            Liang, Percy",
+          editor = "Bouamor, Houda  and
+            Pino, Juan  and
+            Bali, Kalika",
+          booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
+          month = dec,
+          year = "2023",
+          address = "Singapore",
+          publisher = "Association for Computational Linguistics",
+          url = "https://aclanthology.org/2023.findings-emnlp.467",
+          doi = "10.18653/v1/2023.findings-emnlp.467",
+          pages = "7001--7025",
+          abstract = "Generative search engines directly generate responses to user queries, along with in-line citations. A prerequisite trait of a trustworthy generative search engine is verifiability, i.e., systems should cite comprehensively (high citation recall; all statements are fully supported by citations) and accurately (high citation precision; every cite supports its associated statement). We conduct human evaluation to audit four popular generative search engines{---}Bing Chat, NeevaAI, perplexity.ai, and YouChat{---}across a diverse set of queries from a variety of sources (e.g., historical Google user queries, dynamically-collected open-ended questions on Reddit, etc.). We find that responses from existing generative search engines are fluent and appear informative, but frequently contain unsupported statements and inaccurate citations: on average, a mere 51.5{\%} of generated sentences are fully supported by citations and only 74.5{\%} of citations support their associated sentence. We believe that these results are concerningly low for systems that may serve as a primary tool for information-seeking users, especially given their facade of trustworthiness. We hope that our results further motivate the development of trustworthy generative search engines and help researchers and users better understand the shortcomings of existing commercial systems.",
+      }
+    </code></pre>
+      <pre><code>@misc{bohnet2023attributed,
+          title={Attributed Question Answering: Evaluation and Modeling for Attributed Large Language Models}, 
+          author={Bernd Bohnet and Vinh Q. Tran and Pat Verga and Roee Aharoni and Daniel Andor and Livio Baldini Soares and Massimiliano Ciaramita and Jacob Eisenstein and Kuzman Ganchev and Jonathan Herzig and Kai Hui and Tom Kwiatkowski and Ji Ma and Jianmo Ni and Lierni Sestorain Saralegui and Tal Schuster and William W. Cohen and Michael Collins and Dipanjan Das and Donald Metzler and Slav Petrov and Kellie Webster},
+          year={2023},
+          eprint={2212.08037},
+          archivePrefix={arXiv},
+          primaryClass={cs.CL}
+    }
+    </code></pre>
+      <pre><code>@misc{chen2023understanding,
+          title={Understanding Retrieval Augmentation for Long-Form Question Answering}, 
+          author={Hung-Ting Chen and Fangyuan Xu and Shane Arora and Eunsol Choi},
+          year={2023},
+          eprint={2310.12150},
+          archivePrefix={arXiv},
+          primaryClass={cs.CL}
+    }
+    </code></pre>
+      <pre><code>@article{dziri-etal-2022-evaluating,
+      title = "Evaluating Attribution in Dialogue Systems: The {BEGIN} Benchmark",
+      author = "Dziri, Nouha  and
+        Rashkin, Hannah  and
+        Linzen, Tal  and
+        Reitter, David",
+      editor = "Roark, Brian  and
+        Nenkova, Ani",
+      journal = "Transactions of the Association for Computational Linguistics",
+      volume = "10",
+      year = "2022",
+      address = "Cambridge, MA",
+      publisher = "MIT Press",
+      url = "https://aclanthology.org/2022.tacl-1.62",
+      doi = "10.1162/tacl_a_00506",
+      pages = "1066--1083",
+      abstract = "Knowledge-grounded dialogue systems powered by large language models often generate responses that, while fluent, are not attributable to a relevant source of information. Progress towards models that do not exhibit this issue requires evaluation metrics that can quantify its prevalence. To this end, we introduce the Benchmark for Evaluation of Grounded INteraction (Begin), comprising 12k dialogue turns generated by neural dialogue systems trained on three knowledge-grounded dialogue corpora. We collect human annotations assessing the extent to which the models{'} responses can be attributed to the given background information. We then use Begin to analyze eight evaluation metrics. We find that these metrics rely on spurious correlations, do not reliably distinguish attributable abstractive responses from unattributable ones, and perform substantially worse when the knowledge source is longer. Our findings underscore the need for more sophisticated and robust evaluation metrics for knowledge-grounded dialogue. We make Begin publicly available at \url{https://github.com/google/BEGIN-dataset}.",
+  }
+    </code></pre>
+      <pre><code>@inproceedings{yue-etal-2023-automatic,
+      title = "Automatic Evaluation of Attribution by Large Language Models",
+      author = "Yue, Xiang  and
+        Wang, Boshi  and
+        Chen, Ziru  and
+        Zhang, Kai  and
+        Su, Yu  and
+        Sun, Huan",
+      editor = "Bouamor, Houda  and
+        Pino, Juan  and
+        Bali, Kalika",
+      booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      month = dec,
+      year = "2023",
+      address = "Singapore",
+      publisher = "Association for Computational Linguistics",
+      url = "https://aclanthology.org/2023.findings-emnlp.307",
+      doi = "10.18653/v1/2023.findings-emnlp.307",
+      pages = "4615--4635",
+      abstract = "A recent focus of large language model (LLM) development, as exemplified by generative search engines, is to incorporate external references to generate and support its claims. However, evaluating the attribution, i.e., verifying whether the generated statement is fully supported by the cited reference, remains an open problem. Although human evaluation is common practice, it is costly and time-consuming. In this paper, we investigate automatic evaluation of attribution given by LLMs. We begin by defining different types of attribution errors, and then explore two approaches for automatic evaluation: prompting LLMs and fine-tuning smaller LMs. The fine-tuning data is repurposed from related tasks such as question answering, fact-checking, natural language inference, and summarization. We manually curate a set of test examples covering 12 domains from a generative search engine, New Bing. Our results on this curated test set and simulated examples from existing benchmarks highlight both promising signals and challenges. We hope our problem formulation, testbeds, and findings will help lay the foundation for future studies on this important problem.",
+  }
+    </code></pre>
+      </code></pre>
+      <pre><code>@misc{kamalloo2023hagrid,
+    title={HAGRID: A Human-LLM Collaborative Dataset for Generative Information-Seeking with Attribution}, 
+    author={Ehsan Kamalloo and Aref Jafari and Xinyu Zhang and Nandan Thakur and Jimmy Lin},
+    year={2023},
+    eprint={2307.16883},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+  </code></pre>
+
     </div>
   </section>
   <!--End BibTex citation -->
@@ -760,8 +1498,8 @@
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
                 target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page, licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page, licensed under a <a
+                rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>.
             </p>
 
