@@ -1,51 +1,25 @@
 {
     "base_c_e": {
-        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n",
+        "GPT_no_rationale": "### Instruction:\nPlease verify whether the reference supports the claim. Options: 'attributable' or 'not attributable'\n",
+        "GPT_with_rationale": "### Instruction:\nPlease verify whether the reference supports the claim. Please first give your explanation, and then output your final judgment label (Options: 'attributable' or 'not attributable').\n",
+        "GPT_breakdown": "Your task is to determine if a given claim is directly and explicitly supported by a provided reference. This involves a binary decision: labeling the claim as either 'attributable' or 'not attributable'. ### Procedure: Break Down the Claim and Reference: Carefully dissect both the claim and the reference into their fundamental components. This will help in pinpointing the exact areas of alignment or misalignment. Please first give your explanation, and then output your final judgment label (Options: 'attributable' or 'not attributable').\n",
+        "GPT_over_strict": "### Instruction: Your task is to determine if a given claim is directly and explicitly supported by a provided reference. This involves a binary decision: labeling the claim as either 'attributable' or 'not attributable'.\n### Procedure:\nBreak Down the Claim and Reference:\nCarefully dissect both the claim and the reference into their fundamental components. This will help in pinpointing the exact areas of alignment or misalignment.\nDirect and Explicit Support:\nAttributable: Label the claim as 'attributable' if each component of the claim is directly and explicitly supported by the reference. Look for clear, specific mentions or unambiguous implications in the reference that align with the claim. Not Attributable: If any component of the claim lacks this direct and explicit support in the reference, label the claim as 'not attributable'.\nAvoid Over-Interpretation:\nBe cautious of inferring too much from the reference. If the support for a component of the claim requires significant interpretation or assumption beyond what is clearly stated, it is likely a case for 'not attributable'.\nPlease first give your explanation, and then output your final judgment label (Options: 'attributable' or 'not attributable').\n",
+        "GPT_less_strict": "### Instruction: Your task is to determine if a given claim is directly and explicitly supported by a provided reference. This involves a binary decision: labeling the claim as either 'attributable' or 'not attributable'.\n### Procedure:\nBreak Down the Claim and Reference:\nCarefully dissect both the claim and the reference into their fundamental components. This will help in pinpointing the exact areas of alignment or misalignment.\nDirect and Explicit Support:\nAttributable: Label the claim as 'attributable' if each component of the claim is directly and explicitly supported by the reference. Look for clear, specific mentions or unambiguous implications in the reference that align with the claim. Not Attributable: If any component of the claim lacks this direct and explicit support in the reference, label the claim as 'not attributable'.\nAvoid Over-Interpretation:\nBe cautious of inferring too much from the reference. If the support for a component of the claim requires significant interpretation or assumption beyond what is clearly stated, it is likely a case for 'not attributable'.\nComprehensive Understanding:\nThe goal is not to align every aspect of factual information within the claim and the reference, since the reference could be very long, and there might be some redundant information. However, everything that occurs in the claim, must be supported within the reference. Also, since the claim could be a substring of a long response, so there might be some pronouns that are not linked to any entities, but you can treat these as the topic in the reference, apparently. Furthermore, you should understand the semantics of both the claim and the response, understand what they are trying to express. After that, you can somehow summarize the reference and the claim, and do a little bit inference between them. When you check the factual information, focus on those are obviously contradict, and mark these as 'not attributable'. However, sometimes the narrative in the claim and the response might be a little bit vague but still somehow inferencable, then don't be too strict and judge them as attributable. If all factual information in the claim can be found in the reference, or if the reference provides a thematic context that supports the claim, judge it as 'attributable'. If there are spans in the claim that are not factually verified or the thematic context does not align with the claim, then output 'not attributable'.\nPlease first give your explanation, and then output your final judgment label (Options: 'attributable' or 'not attributable').\n",
         "llama2": "### Instruction:\nPlease solely verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
     },
     "base_q_c_e": {
-        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The question is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the question. Options: 'attributable' or 'not attributable'.\n",
+        "GPT_no_rationale": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The question is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the question. Options: 'attributable' or 'not attributable'.\n",
+        "GPT_with_rationale": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The question is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the question. Options: 'attributable' or 'not attributable'.\nPlease first give your explanation, and then output your final judgement label (Options: 'attributable' or 'not attributable').\n",
         "llama2": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The question is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the question. Options: 'attributable' or 'not attributable'.\n"
     },
     "base_c_e_r": {
-        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim. The claim may be part of a response, or it may be the same as the response. The response is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response. Options: 'attributable' or 'not attributable'.\n",
+        "GPT_no_rationale": "### Instruction:\nPlease solely verify whether the reference can support the claim. The claim may be part of a response, or it may be the same as the response. The response is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response. Options: 'attributable' or 'not attributable'.\n",
+        "GPT_with_rationale": "### Instruction:\nPlease solely verify whether the reference can support the claim. The claim may be part of a response, or it may be the same as the response. The response is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response. Please first give your explanation, and then output your final judgement label (Options: 'attributable' or 'not attributable').\n",
         "llama2": "### Instruction:\nPlease solely verify whether the reference can support the claim. The claim may be part of a response, or it may be the same as the response. The response is provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response. Options: 'attributable' or 'not attributable'.\n"
     },
     "base_q_c_e_r": {
-        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The claim may be part of a response, or it may be the same as the response. The question and the response are provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response or the question. Options: 'attributable' or 'not attributable'.\n",
+        "GPT_no_rationale": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The claim may be part of a response, or it may be the same as the response. The question and the response are provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response or the question. Options: 'attributable' or 'not attributable'.\n",
+        "GPT_with_rationale": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The claim may be part of a response, or it may be the same as the response. The question and the response are provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response or the question. Please first give your explanation, and then output your final judgement label (Options: 'attributable' or 'not attributable').\n",
         "llama2": "### Instruction:\nPlease solely verify whether the reference can support the claim to the question. The claim may be part of a response, or it may be the same as the response. The question and the response are provided to help you better understand the claim, but your judgement should and only should be based on the claim, without being affected by the response or the question. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "info_c_e": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "info_q_c_e": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "info_c_e_r": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "info_q_c_e_r": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "breakdown_c_e": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "breakdown_q_c_e": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "breakdown_c_e_r": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "breakdown_q_c_e_r": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "breakdown_strong_q_c_e": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "breakdown_weak_q_c_e": {
-        "GPT": "### Instruction:\nPlease verify whether the reference can support the claim. Options: 'attributable' or 'not attributable'.\n"
-    },
-    "base_c_e_w_exp": {
-        "GPT": "### Instruction:\nPlease solely verify whether the reference can support the claim. You should first output the explanation, and then give your judgement. Finally, please format the judgement in this format: 'Answer: attributable' or 'Answer: not attributable'.\n"
     }
 }
