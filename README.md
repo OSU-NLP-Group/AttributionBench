@@ -1,8 +1,10 @@
 # AttributionBench
 Code and datasets for the paper "AttributionBench: How Hard is Automatic Attribution Evaluation?".
 
+<img src="AttributionBench.png" width=60% />
+
 ## Dataset
-We constructed this dataset from multiple existing data sources in a unified format, in order to create a unified and diverse testbed for evaluating advanced attribution evaluation systems. The dataset contains both in-distribution training set and id-distribution and out-of-distribution test set.
+We constructed this dataset from multiple existing data sources in a unified format, in order to create a unified and diverse testbed for evaluating advanced attribution evaluation systems. The dataset contains both in-domain training set and id-domain and out-of-domain test set.
 
 ## Usage
 ```python
@@ -21,17 +23,16 @@ features = datasets.Features({
   'id': datasets.Value('string'),
   })
 
-# in-domain train (subset-balanced): 
-train_dataset = datasets.load_dataset("json", split='train', data_files="data/train_all_subset_balanced.jsonl", features=features)
+# in-domain train (subset-balanced)
+# possible values for 'name' field: ["subset_balanced", "overall_balanced", "not_balanced", "full_data"]
+dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced", split="train", features=features)
 
-# in-domain dev (subset-balanced)
-dev_dataset = datasets.load_dataset("json", split='train', data_files="data/dev_all_subset_balanced.jsonl", features=features)
-
-# in-domain test (subset-balanced)
-test_dataset = datasets.load_dataset("json", split='train', data_files="data/test_all_subset_balanced.jsonl", features=features)
+# in-domain eval/test (subset-balanced)
+# dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced", split="test", features=features)
+dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced", split="test", features=features)
 
 # out-of-domain test (subset-balanced)
-test_ood_dataset = datasets.load_dataset("json", split='train', data_files="data/test_ood_all_subset_balanced.jsonl", features=features)
+dataset = datasets.load_dataset("osunlp/AttributionBench", name="subset_balanced", split="test_ood", features=features)
 ```
 
 ## Dataset Structure
@@ -65,13 +66,45 @@ test_ood_dataset = datasets.load_dataset("json", split='train', data_files="data
 - ```id```: ```str``` The unique id for the data item in AttributionBench.
 
 ## Prompting GPT-3.5 and GPT-4
+To reproduce the results of prompting GPT-3.5 in the paper, you need to put an OpenAI api key in the ```openai_api_key.txt``` file, and change the hyperparameters in ```run.sh```, and then simply do
+```python
+sh run.sh
+```
+## Fine-tuning GPT-3.5
+You can use our fine-tuned GPT-3.5 model with this model name:
+```ft:gpt-3.5-turbo-1106:the-ohio-state-university::8eWuGzGQ```
+Please simply replace the ```model``` field into this model name when calling OpenAI api. For example:
+```python
+response = openai.ChatCompletion.create(
+    model='ft:gpt-3.5-turbo-1106:the-ohio-state-university::8eWuGzGQ',
+    messages=messages,
+    temperature=0,
+    top_p=0.9,
+    max_tokens=512,
+    n=1
+)
+```
 
 
-## Fine-tuning Open-Source Models
+## Fine-tuning & Inference with Open-Source Models
 For fine-tuning models on AttributionBench, please refer to the scripts under the ```scripts/``` directory. For example, if you want to fine-tune FLAN-T5, then simply do:
 ```shell
 cd zsh_scripts
 sh run_flant5.sh
+sh run_autoais.sh
+sh run_llama2_7b.sh
+sh run_roberta.sh
 ```
 Please modify the hyperparameters and paths before you do so.
 
+For inference, please first replace the ```$MODEL_DIR``` in ```run_inference.sh```, and do
+```shell
+sh run_inference.sh
+```
+This will generate the output files consisting of model generations. After getting a bunch of inferenced files, simply do
+```shell
+sh analysis.sh
+```
+And the the evaluation results (accuracy, precision, recall, f1) will be generated.
+
+## Citation
