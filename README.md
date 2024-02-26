@@ -1,10 +1,14 @@
 # AttributionBench
-Code and datasets for the paper "AttributionBench: How Hard is Automatic Attribution Evaluation?".
+Code and datasets for the paper <a href="https://arxiv.org/abs/2402.15089">AttributionBench: How Hard is Automatic Attribution Evaluation?"</a>.
+
+Project page: <a href="https://osu-nlp-group.github.io/AttributionBench/">[Project Page]</a>
+
+🤗 Dataset: <a href="https://huggingface.co/datasets/osunlp/AttributionBench">[🤗 Dataset]</a>
 
 <img src="AttributionBench.png" width=100% />
 
 ### Updates:
-* ```02/26/24```: We have made the initial release of our code and data. Please feel free to open an issue if you run into any problems.
+* 02/26/24: We have made the initial release of our code and data. Please feel free to open an issue if you run into any problems.
 
 ## Dataset
 We constructed this dataset from multiple existing data sources in a unified format, in order to create a unified and diverse testbed for evaluating advanced attribution evaluation systems. The dataset contains both in-domain training set and id-domain and out-of-domain test set.
