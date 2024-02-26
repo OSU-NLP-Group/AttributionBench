@@ -4,7 +4,7 @@ Code and datasets for the paper "AttributionBench: How Hard is Automatic Attribu
 <img src="AttributionBench.png" width=100% />
 
 ### Updates:
-02/26/24: We have made the initial release of our code and data. Please feel free to open an issue if you run into any problems.
+* ```02/26/24```: We have made the initial release of our code and data. Please feel free to open an issue if you run into any problems.
 
 ## Dataset
 We constructed this dataset from multiple existing data sources in a unified format, in order to create a unified and diverse testbed for evaluating advanced attribution evaluation systems. The dataset contains both in-domain training set and id-domain and out-of-domain test set.
